@@ -15,3 +15,11 @@ function palindrome(str) {
 }
 
 module.exports = palindrome;
+
+// function palindrome(str) {
+//     let reverse = str.split('').reverse().join('');
+//     if (reverse === str) {
+//         return true;
+//     }
+//     return false;
+// }
