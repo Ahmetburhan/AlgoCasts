@@ -33,6 +33,18 @@
 //     steps (n, row, stair)   
 // }
 steps(9)
+
+function steps(n, row = 0, stairs = "") {
+    if(n === row) {
+        return;
+    }
+    if ( n === stairs.length) {
+        console.log(stairs);
+        return steps (n, row + 1);
+    }
+    let add = stairs.length <= row ? "#" : " " ;
+    steps(n, row, stairs + add)
+}
 module.exports = steps;
 
 
@@ -52,15 +64,15 @@ module.exports = steps;
 // }
 
 
-function steps (n) {
-    for(var y = 0; y < n; y++){
-        var stairs = "";
-    for(var x = 0; x < n; x++){
-        if (x <= y){
-            stairs += "#"
-        } else {
-            stairs += " "
-        }
-        } console.log(stairs)
-    }
-}
+// function steps (n) {
+//     for(var y = 0; y < n; y++){
+//         var stairs = "";
+//     for(var x = 0; x < n; x++){
+//         if (x <= y){
+//             stairs += "#"
+//         } else {
+//             stairs += " "
+//         }
+//         } console.log(stairs)
+//     }
+// }
