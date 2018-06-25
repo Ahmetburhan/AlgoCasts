@@ -47,7 +47,7 @@ class LinkedList {
     }
     clear(){
     this.head = null;
-
+    return;
     }
     removeFirst(){
         if(!this.head){
@@ -131,6 +131,7 @@ class LinkedList {
 
 
     }
+
 
 
 }
