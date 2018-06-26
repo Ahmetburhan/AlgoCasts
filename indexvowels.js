@@ -24,7 +24,7 @@ function anagramPalindrome(word) {
     //   }
 
     //charRep will be represnting chars on word and its repeated qtys
-    let charRep = {}
+    let charRep = {};
 
 
     for (let char of word) {
@@ -89,7 +89,7 @@ function reverseVowels(word) {
     return wordArray.join("")
 
 }
-console.log(reverseVowels("bercraeEad"));
+console.log(reverseVowels("adasdadas"));
 
 
 // ## 10. Anagram Palindrome

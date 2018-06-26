@@ -16,7 +16,7 @@ function cleanString(str){
     return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
 }
 
-
+console.log(anagrams('rail safety', 'fairy tales'))
 module.exports = anagrams;
 
 
