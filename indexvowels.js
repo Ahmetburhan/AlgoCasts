@@ -92,7 +92,7 @@ function reverseVowels(word) {
 console.log(reverseVowels("adasdadas"));
 
 
-// ## 10. Anagram Palindrome
+//   10. Anagram Palindrome
 
 // *Given a string, determine if the string can be rearranged to form a palindrome.*
 
