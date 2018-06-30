@@ -1,0 +1,39 @@
+div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+div>div {
+    display: inherit;
+}
+
+.xlBox {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+}
+
+.lBox {
+    width: 75px;
+    height: 75px;
+    border: 1px solid red;
+    top: 20px;
+    left: 20px;
+}
+
+.mBox {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+    top: 30px;
+    left: 30px;
+}
+
+.sBox {
+    width: 25px;
+    height: 25px;
+    border: 1px solid red;
+    top: 40px;
+    left: 40px;
+}

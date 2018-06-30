@@ -9,6 +9,6 @@ function findNumber(arr, k) {
         }
     } return "NO"
 
-
+Í
 }
 
