@@ -17,3 +17,17 @@ every
 let some = computers.some((computer) => computer.ram > 16)
 some
 
+
+
+var names = [
+    "Alexandria",
+    "leyla",
+    "cay"
+];
+
+
+names.every((name) => name.length > 4);
+
+names.some((name) => name.length > 4);
+
+
