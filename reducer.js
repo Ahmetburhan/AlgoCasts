@@ -45,3 +45,20 @@ var inProgress = requests.some(function (request) {
     return request.status === "pending"
 })
 inProgress
+
+
+
+
+let primaryColors = [
+    { color: "red" },
+    { color: "blue" },
+    { color: "yellow" }
+]
+primaryColors
+
+"===="
+
+primaryColors.reduce(function (previous, primaryColor) {
+    previous.push(primaryColor.color)
+    return previous;
+}, []);
