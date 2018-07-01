@@ -29,3 +29,70 @@ function commentsForPost(post, comments) {
 }
 
 commentsForPost(post, comments)
+
+
+
+
+
+
+var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+var filteredNumbers = numbers.filter((number) => number > 50)
+
+
+
+
+/////////// display admin users.
+
+
+var users = [
+    { id: 1, admin: true },
+    { id: 2, admin: false },
+    { id: 3, admin: false },
+    { id: 4, admin: false },
+    { id: 5, admin: true },
+];
+
+var filteredUsers = users.filter((user) => user.admin)
+
+
+
+var numbers = [10, 20, 30];
+
+function reject(array, iteratorFunction) {
+    return array.filter((arrItem) => arrItem !== iteratorFunction(arrItem))
+}
+
+var lessThanFifteen = function (number) {
+    return number > 15;
+};
+
+function reject(array, iteratorFunction) {
+    return array.filter(arrItem => !iteratorFunction(arrItem))
+
+}
+
+
+function reject(numbers, iteratorFunction) {
+    return numbers.filter(function (number) {
+        return !iteratorFunction(number);
+    });
+}
+
+var numbers = [10, 20, 30];
+var lessThanFifteen = reject(numbers, function (number) {
+    return number > 15;
+});
+
+lessThanFifteen
+
+function reject(array, iteratorFunction) {
+    return array.filter(item => !iteratorFunction(item));
+}
+
+
+//final answer
+function reject(array, iteratorFunction) {
+    return array.filter(arrItem => !iteratorFunction(arrItem))
+}
+
