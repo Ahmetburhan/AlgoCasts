@@ -9,3 +9,25 @@ const team = {
 
 }
 team.teamSummary();
+
+
+//const profile = {
+//    name: 'Alex',
+//  getName: function(){
+//    return this.name;
+//  }
+//};
+
+//let getName = (profile) =>  profile.name;
+
+
+
+const profile = {
+    name: 'Alex',
+    getName: function () {
+        return this.name;
+
+    }
+};
+
+profile.getName()
