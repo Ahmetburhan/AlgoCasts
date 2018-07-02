@@ -34,3 +34,30 @@ function validateShoppingList(...items) {
 }
 
 validateShoppingList("oranges", "bread", "eggs")
+
+
+
+const MathLibrary = {
+    calculateProduct(...rest) {
+        console.log("Please use multiply functions")
+        return this.multiply(...rest)
+    },
+    multiply(a, b) {
+        return a * b;
+    }
+
+}
+
+MathLibrary.calculateProduct(2, 4)
+
+
+
+
+function product(...numbers) {
+    //var numbers = [a,b,c,d,e];
+
+    return numbers.reduce((acc, number) => acc * number)
+}
+
+
+product(2, 3)
