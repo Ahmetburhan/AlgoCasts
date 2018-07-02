@@ -10,3 +10,18 @@ const { type, amount } = expense;
 
 type;
 amount;
+
+
+
+const companies = [
+    "google", "facebook", "kayak"
+]
+
+const { length } = companies;
+
+const [name, name2, ...rest] = companies;
+
+name;
+name2;
+rest;
+length;
