@@ -20,3 +20,12 @@ function double([number, ...rest]) {
 }
 
 double(numbers);
+
+
+const numbers = [1, 2, 3];
+
+const doubled = ([number, ...rest]) => {
+    return (number === undefined) ? [] : [number * 2, ...doubled(rest)];
+};
+
+doubled([1, 4, 5, 7]);
