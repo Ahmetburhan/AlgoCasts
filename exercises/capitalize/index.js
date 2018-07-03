@@ -39,4 +39,13 @@ function capitalize(str) {
 
 
 }
-capitalize('a lazy fox');
+
+
+function capitalize2(str) {
+    let words = [];
+    for (let word of str.split(' ')) {
+        words.push(word[0].toUpperCase() + word.slice(1))
+    } return words.join(" ");
+}
+console.log(capitalize2('a lazy fox'))
+// capitalize('a lazy fox');
