@@ -15,15 +15,15 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
-    let map = {};
-    let left = 0;
-    let strArray = s.split('');
-    return strArray.reduce((max,v,i) => {
-        left = map[v] >= left ? map[v] + 1 : left;
-        map[v] = i;
-        return Max.max(max, i - left + 1)
-    }, 0)
+function lengthOfLongestSubstring(s) {
+    const map = {};
+    var left = 0;
+
+    return s.split('').reduce((previous, value, i) => {
+        left = map[value] >= left ? map[value] + 1 : left; 
+        map[value] = i;
+        return Math.max(previous, i - left + 1);
+    }, 0);
 
 }
 
@@ -31,4 +31,4 @@ var lengthOfLongestSubstring = function (s) {
 
 
 
-lengthOfLongestSubstring("pwkowkeow") 
+console.log(lengthOfLongestSubstring("pwkowkeow"));
