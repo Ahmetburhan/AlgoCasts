@@ -18,6 +18,7 @@ var longestPalindrome = function (s) {
         }
     }
     return max;
+    
 };
 
 console.log(longestPalindrome("aafdsavvaadfsa"))
