@@ -1,35 +1,23 @@
 /**
- * @param {number} n
- * @return {boolean}
+ * @param {string} s
+ * @return {string}
  */
-var isHappy = function (n, count) {
-    if (!count) {
-        var count = 0;
+var longestPalindrome = function (s) {
+    var max = '';
+    for (var i = 0; i < s.length; i++) {
+        for (var j = 0; j < 2; j++) {
+            var left = i;
+            var right = i + j;
+            while (s[left] && s[left] === s[right]) {
+                left--;
+                right++;
+            }
+            if ((right - left - 1) > max.length) {
+                max = s.substring(left + 1, right);
+            }
+        }
     }
-
-    if (n === 1) {
-        return true;
-    }
-
-    if (count > 50) {
-        return false;
-    }
-
-    var happySplit = n.toString().split('');
-
-    var sumSquare = happySplit.reduce(function (prev, val) {
-        console.log(prev + (Math.floor(val * val)))
-        return prev + (Math.floor(val * val));
-    }, 0);
-
-    count++;
-    return isHappy(sumSquare, count);
+    return max;
 };
 
-
-console.log(isHappy(16))
-
-
-console.log(isHappy(19))
-
-
+console.log(longestPalindrome("aafdsavvaadfsa"))
