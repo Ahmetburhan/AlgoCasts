@@ -22,8 +22,11 @@ function balanced(string) {
 
 // balanced("(}");
 
+// console.log("this one", balanced("()())("))
 
-console.log("this one", balancedParens("()}"))
+console.log("this one", balancedParens("(){}"))
+
+
 //! mark makes boolen
 //      if (previous < 0 {return previous;}
 // makes check if they are like this orde )( return false
