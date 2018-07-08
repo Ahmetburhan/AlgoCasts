@@ -55,3 +55,4 @@ function anagramPalindrome(word) {
 
 console.log(anagramPalindrome("carrace")); // true
 console.log(anagramPalindrome("cutoo")); // false
+console.log(anagramPalindrome("ivicc")); // false
