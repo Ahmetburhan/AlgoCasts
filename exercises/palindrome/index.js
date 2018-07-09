@@ -14,6 +14,7 @@ function palindrome(str) {
     } return false;
 }
 
+console.log(palindrome("nalanp"))
 module.exports = palindrome;
 
 // function palindrome(str) {

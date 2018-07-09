@@ -12,13 +12,13 @@
 //     }, 0);
 // }
 
-function balanced(string) {
-    return !string.split("").reduce(function (previous, char){
-        if(char === "(") {return ++previous;}
-        if(char === ")") {return --previous;}
-        return previous;
-    }, 0)
-}
+// function balanced(string) {
+//     return !string.split("").reduce(function (previous, char){
+//         if(char === "(") {return ++previous;}
+//         if(char === ")") {return --previous;}
+//         return previous;
+//     }, 0)
+// }
 
 
 function balanced(string) {
@@ -41,7 +41,7 @@ function balanced(string) {
 
 // balanced("(}");
 
-console.log("this one", balanced("{}(){}{}["))
+console.log("this one", balanced("{}[(){}{}{}"))
 
 // console.log("this one", balancedParens("(){}"))
 
