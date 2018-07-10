@@ -11,7 +11,7 @@
 //   fizz
 //   4
 //   buzz
-
+//buzz
 function fizzBuzz(n) {
     for (let i = 1; i <= n; i++) {
      // if (n < 3) return console.log(n);
