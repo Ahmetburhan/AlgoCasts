@@ -24,3 +24,4 @@ john.calcBMI();
 mark.calcBMI();
 
 console.log(john, mark)
+
