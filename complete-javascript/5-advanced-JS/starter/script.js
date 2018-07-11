@@ -150,19 +150,50 @@
 
 // let retirementGermany = retirement(65);
 
-function interviewQuestion(job) {
-    if (job === "designer"){
-        return function(name){
-            console.log(name + ", can you please explain what UX design is?");
-        }
-    } else if (job === "teacher") {
-        return function (name) {
-            console.log(name + ", what subject do you teach");
-        }
-    } else {
-        return function (name) {
-            console.log(name + ",Hello What do you do?");
-        }
+// function interviewQuestion(job) {
+//     return function (name){
+//         if (job === "designer"){
+//             console.log(name + ", can you please explain what UX design is?");
+//         } else if (job === "teacher") {
+//             console.log(name + ", what subject do you teach");
+//         } else {
+//             console.log(name + ",Hello What do you do?");
+//         }
 
+//     }
+// }
+
+// interviewQuestion("designer")("john")
+
+//bind call apply
+
+
+var john = {
+    name: "John",
+    age: 26,
+    job: "teacher",
+    presentation: function(style, timeOfDay) {
+        if(style === "formal"){
+            console.log("good" +timeOfDay+ " ladies and gentalmans! I\'m" +this.name+" i\'m a"+this.job+" nd I\'m"+this.age+" years old");
+        } else if ( style === "friendly"){
+            console.log("Hey whats up ladies and gentalmans! I\'m" + this.name + " i\'m a" + this.job + " nd I\'m" + this.age + " years old" + timeOfDay + ".")
+        }
+    }
 }
+
+john.presentation("friendly", "morning")
+
+var emily = {
+    name : "Emily",
+    age: 35,
+    job : "designer",
 }
+
+john.presentation.call(emily, "friendly", "afternoon")
+
+var johnFriendly = john.presentation.bind(john, "friendly")
+
+johnFriendly("morning");
+johnFriendly("afternoon")
+var emilyFormal = john.presentation.bind(emily, "formal");
+emilyFormal("afternoon")
