@@ -199,24 +199,26 @@
 // emilyFormal("afternoon")
 
 
-var years = [2005, 1913, 1924, 1945, 1967];
+// var years = [2005, 1913, 1924, 1945, 1967];
 
-function arrayCalc(arr,fn){
-    var arrRes = [];
-    for (var i=0; i< arr.length; i++){
-        arrRes.push(fn(arr[i]))
-    } return arrRes;
-}
-function calculateAge(el) {
-    return 2018 - el
+// function arrayCalc(arr,fn){
+//     var arrRes = [];
+//     for (var i=0; i< arr.length; i++){
+//         arrRes.push(fn(arr[i]))
+//     } return arrRes;
+// }
+// function calculateAge(el) {
+//     return 2018 - el
 
-}
+// }
 
-function isFullAge(el, limit) {
-    return el >= limit;
+// function isFullAge(el, limit) {
+//     return el >= limit;
 
-}
-var ages = arrayCalc(years, calculateAge);
-var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
-console.log(ages);
-console.log(fullJapan);
+// }
+// var ages = arrayCalc(years, calculateAge);
+// var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+// console.log(ages);
+// console.log(fullJapan);
+
+
