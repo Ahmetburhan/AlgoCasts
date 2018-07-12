@@ -168,32 +168,55 @@
 //bind call apply
 
 
-var john = {
-    name: "John",
-    age: 26,
-    job: "teacher",
-    presentation: function(style, timeOfDay) {
-        if(style === "formal"){
-            console.log("good" +timeOfDay+ " ladies and gentalmans! I\'m" +this.name+" i\'m a"+this.job+" nd I\'m"+this.age+" years old");
-        } else if ( style === "friendly"){
-            console.log("Hey whats up ladies and gentalmans! I\'m" + this.name + " i\'m a" + this.job + " nd I\'m" + this.age + " years old" + timeOfDay + ".")
-        }
-    }
+// var john = {
+//     name: "John",
+//     age: 26,
+//     job: "teacher",
+//     presentation: function(style, timeOfDay) {
+//         if(style === "formal"){
+//             console.log("good" +timeOfDay+ " ladies and gentalmans! I\'m" +this.name+" i\'m a"+this.job+" nd I\'m"+this.age+" years old");
+//         } else if ( style === "friendly"){
+//             console.log("Hey whats up ladies and gentalmans! I\'m" + this.name + " i\'m a" + this.job + " nd I\'m" + this.age + " years old" + timeOfDay + ".")
+//         }
+//     }
+// }
+
+// john.presentation("friendly", "morning")
+
+// var emily = {
+//     name : "Emily",
+//     age: 35,
+//     job : "designer",
+// }
+
+// john.presentation.call(emily, "friendly", "afternoon")
+
+// var johnFriendly = john.presentation.bind(john, "friendly")
+
+// johnFriendly("morning");
+// johnFriendly("afternoon")
+// var emilyFormal = john.presentation.bind(emily, "formal");
+// emilyFormal("afternoon")
+
+
+var years = [2005, 1913, 1924, 1945, 1967];
+
+function arrayCalc(arr,fn){
+    var arrRes = [];
+    for (var i=0; i< arr.length; i++){
+        arrRes.push(fn(arr[i]))
+    } return arrRes;
+}
+function calculateAge(el) {
+    return 2018 - el
+
 }
 
-john.presentation("friendly", "morning")
+function isFullAge(el, limit) {
+    return el >= limit;
 
-var emily = {
-    name : "Emily",
-    age: 35,
-    job : "designer",
 }
-
-john.presentation.call(emily, "friendly", "afternoon")
-
-var johnFriendly = john.presentation.bind(john, "friendly")
-
-johnFriendly("morning");
-johnFriendly("afternoon")
-var emilyFormal = john.presentation.bind(emily, "formal");
-emilyFormal("afternoon")
+var ages = arrayCalc(years, calculateAge);
+var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+console.log(ages);
+console.log(fullJapan);
