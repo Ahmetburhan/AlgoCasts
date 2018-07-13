@@ -230,6 +230,42 @@
 // })
 
 
+// //lets start spread
+// function addFourAges (a,b,c,d){
+//     return a + b + c + d;
+
+// }
+// var sum1 = addFourAges(4,5,6,7);
+// console.log(sum1);
+
+// //es5
+
+// var ages = [4,6,8,9];
+
+// var sum2 = addFourAges.apply(null, ages);
+
+// console.log(sum2);
+
+// //es6 same and simpler
+
+// const sum3= addFourAges(...ages);
+// console.log(sum3);
+
+// const familySmith = ["john", "jane", "mark"];
+
+// const familyBruce = ["alie", "velie", "delie"];
+// const bothFamilies = [...familySmith, ...familyBruce];
+// console.log(bothFamilies);
+
+// const h = document.querySelector("h1");
+// const boxes = document.querySelectorAll(".box");
+
+// const all = [h, ...boxes];
+// Array.from(all).forEach((el)=>{el.style.color = "red"});
+
+// h.style.color = "red"
+
+
 // Array.from(boxes).forEach((el) => {
 //     el.style.backgroundColor = "red";
 // }, this);
