@@ -182,7 +182,7 @@
 // console.log(retirement);
 
 
-const boxes = document.querySelectorAll(".box");
+// const boxes = document.querySelectorAll(".box");
 
 // //es5
 // var boxesArr5 = Array.prototype.slice.call(boxes);
@@ -191,7 +191,84 @@ const boxes = document.querySelectorAll(".box");
 //     el.style.backgroundColor = 'dodgerblue';
 // })
 
+
+
 //es6
+// const boxesArr6 = Array.from(boxes);
+
+// boxesArr6.forEach((el) =>{
+//     el.style.backgroundColor = "red";
+// }, this);
+
+
+//final super short
+// Array.from(boxes).forEach((el) => {
+//     el.style.backgroundColor = "red";
+// }, this);
+
+//es6
+// const boxesArr6 = Array.from(boxes);
+
+// boxesArr6.forEach((el) =>{
+//     el.style.backgroundColor = "red";
+// }, this);
+
+
+// //final super short
+// // Array.from(boxes).forEach((el) => {
+// //     el.style.backgroundColor = "red";
+// // }, this);
+
+// //es6
+// const boxes = document.querySelectorAll(".box");
+// const boxesArr6 = Array.from(boxes);
+
+// var boxesArr5 = Array.prototype.slice.call(boxes);
+
+// boxesArr5.forEach(function(el){
+//     el.style.backgroundColor = 'dodgerblue';
+// })
+
+
+// Array.from(boxes).forEach((el) => {
+//     el.style.backgroundColor = "red";
+// }, this);
+
+//  for(var i = 0; i < boxesArr5.length; i++) {
+//      if(boxesArr5[i].className === "box blue"){
+//         continue;
+//         // break;
+//      }
+//      boxesArr5[i].textContent = "i changed to red/"
+//  }
+
+// for(let cur of boxesArr6) {
+//     if (cur.className.includes("blue")){
+//         continue;
+//     }
+//     cur.textContent = "i changed to blue";
+// }
+
+var ages = [12,15,6,21,12,33];
+
+var full = ages.map((age)=>{
+    return age >= 18;
+});
+
+console.log(full);
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)])
+
+
+//es6
+
+let es6way = ages.findIndex((cur) => {
+    return cur >= 18;
+})
+console.log(es6way)
+
+console.log(ages.find(cur => cur >= 18))
+
 
 
 
