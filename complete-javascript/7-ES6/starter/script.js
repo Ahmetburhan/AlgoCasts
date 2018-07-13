@@ -249,25 +249,25 @@
 //     cur.textContent = "i changed to blue";
 // }
 
-var ages = [12,15,6,21,12,33];
+// var ages = [12,15,6,21,12,33];
 
-var full = ages.map((age)=>{
-    return age >= 18;
-});
+// var full = ages.map((age)=>{
+//     return age >= 18;
+// });
 
-console.log(full);
-console.log(full.indexOf(true));
-console.log(ages[full.indexOf(true)])
+// console.log(full);
+// console.log(full.indexOf(true));
+// console.log(ages[full.indexOf(true)])
 
 
-//es6
+// //es6
 
-let es6way = ages.findIndex((cur) => {
-    return cur >= 18;
-})
-console.log(es6way)
+// let es6way = ages.findIndex((cur) => {
+//     return cur >= 18;
+// })
+// console.log(es6way)
 
-console.log(ages.find(cur => cur >= 18))
+// console.log(ages.find(cur => cur >= 18))
 
 
 
