@@ -306,8 +306,32 @@
 // console.log(ages.find(cur => cur >= 18))
 
 
+//rest parameters
+
+// function isFullAge5() {
+//     console.log(arguments);
+//     var argsArr = Array.prototype.slice.call(arguments);
+//     argsArr.forEach((el)=>{
+//         console.log((2016 - el) >= 18);
+//     })
+// }
+
+// isFullAge5(1990,1999,1989,2005);
+// console.log(typeof(isFullAge5));
 
 
+// function isFullAge6(...years) {
+//    years.forEach((cur)=> console.log((2018-cur) >= 18))
+// }
+
+// isFullAge6(1990, 1999, 1989, 2005);
+
+//it inserts the limit as limiter to function for arg[0]
+// function isFullAge6(limit,...years) {
+//    years.forEach((cur)=> console.log((2018-cur) >= limit))
+// }
+
+// isFullAge6(18,1990, 1999, 1989, 2005);
 
 
 
