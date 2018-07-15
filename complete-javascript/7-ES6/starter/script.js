@@ -333,24 +333,77 @@
 
 // isFullAge6(18,1990, 1999, 1989, 2005);
 
-function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
-    lastName === undefined ? lastName = "Smith" : lastName = lastName;
+// function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+//     lastName === undefined ? lastName = "Smith" : lastName = lastName;
 
-    nationality === undefined ? nationality = "American" : nationality = nationality ;
+//     nationality === undefined ? nationality = "American" : nationality = nationality ;
 
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.yearOfBirth = yearOfBirth;
-    this.nationality = nationality;
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.yearOfBirth = yearOfBirth;
+//     this.nationality = nationality;
+// }
+
+// let john = new SmithPerson("john", 1990, "smith", "turkish");
+// console.log(john)
+
+// let mary = new SmithPerson("mary", 1990, "smith");
+// console.log(mary)
+
+
+// function SmithPerson(firstName, yearOfBirth, lastName = "smith", nationality = "american") {
+//     // lastName === undefined ? lastName = "Smith" : lastName = lastName;
+
+//     // nationality === undefined ? nationality = "American" : nationality = nationality;
+
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.yearOfBirth = yearOfBirth;
+//     this.nationality = nationality;
+// }
+
+// let john = new SmithPerson("john", 1990, "smith", "turkish");
+// console.log(john)
+
+// let mary = new SmithPerson("mary", 1990, "smith");
+// console.log(mary)
+
+// //Maps
+
+// const question = new Map();
+// question.set("question", "What is the official name of Latest JS version?");
+// question.set(1, "ES5");
+// question.set(2, "es6");
+// question.set(3, "ECMA2015");
+// question.set(4, "ECMA2016");
+// question.set(5, "ECMA2016");
+// question.set("correct", 3);
+
+// console.log(question.get("question"));
+// console.log(question.size);
+
+
+// //delete the position 4
+// if (question.has(4)) {
+//     console.log("answer 4 is here")
+// // question.delete(4);
+// };
+
+
+//delete all
+
+// question.clear();
+
+// question.forEach((value,key)=> {
+//     console.log(`This is the key # ${key}, and its set to ${value}`)
+// })
+
+for (let [key, value] of question.entries()) {
+    
+    console.log(`This is the key # ${key}, and its set to ${value}`);
+
+
 }
-
-let john = new SmithPerson("john", 1990, "smith", "turkish");
-console.log(john)
-
-let mary = new SmithPerson("mary", 1990, "smith");
-console.log(mary)
-
-
 
 
 
