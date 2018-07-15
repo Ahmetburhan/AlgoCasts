@@ -10,7 +10,7 @@ arr1.forEach((el)=> {
 //   let str = '<ul>';
    str += `<li>${el}</li>`;
 });
-str += "<ul>";
+str += "</ul>";
 console.log(str)
 document.querySelector(".lis").innerHTML = str;
 
