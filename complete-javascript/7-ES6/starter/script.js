@@ -362,13 +362,13 @@
 //     this.nationality = nationality;
 // }
 
-// let john = new SmithPerson("john", 1990, "smith", "turkish");
-// console.log(john)
+// // let john = new SmithPerson("john", 1990, "smith", "turkish");
+// // console.log(john)
 
-// let mary = new SmithPerson("mary", 1990, "smith");
-// console.log(mary)
+// // let mary = new SmithPerson("mary", 1990, "smith");
+// // console.log(mary)
 
-// //Maps
+// // //Maps
 
 // const question = new Map();
 // question.set("question", "What is the official name of Latest JS version?");
@@ -379,35 +379,76 @@
 // question.set(5, "ECMA2016");
 // question.set("correct", 3);
 
-// console.log(question.get("question"));
-// console.log(question.size);
+// // console.log(question.get("question"));
+// // console.log(question.size);
 
 
-// //delete the position 4
-// if (question.has(4)) {
-//     console.log("answer 4 is here")
-// // question.delete(4);
-// };
+// // //delete the position 4
+// // if (question.has(4)) {
+// //     console.log("answer 4 is here")
+// // // question.delete(4);
+// // };
 
 
-//delete all
+// //delete all
 
-// question.clear();
+// // question.clear();
 
-// question.forEach((value,key)=> {
-//     console.log(`This is the key # ${key}, and its set to ${value}`)
-// })
+// // question.forEach((value,key)=> {
+// //     console.log(`This is the key # ${key}, and its set to ${value}`)
+// // })
 
-for (let [key, value] of question.entries()) {
+// // for (let [key, value] of question.entries()) {
     
-    console.log(`This is the key # ${key}, and its set to ${value}`);
+// //     console.log(`This is the key # ${key}, and its set to ${value}`);
 
 
+// // }
+
+// for (let [key, value] of question.entries()) {
+//     if(typeof(key) === "number") {
+//         console.log(`This is the key # ${key}, and its set to ${value}`);
+//     }
+// }
+
+// const ans = parseInt(prompt("write the correct ansert"));
+
+// console.log(question.get(ans === question.get("correct")))
+
+//Classes
+
+
+var Person5 = function(name, yearOfBirth, job){
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear - this.yearOfBirth;
+    console.log(age);
 }
 
+let john5 = new Person5("ali", 1999, 'doctor')
 
+//es6
 
+class Person6 {
+    constructor (name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+    calculateAge() {
+        var age = new Date().getFullYear - this.yearOfBirth;
+        console.log(age)
+    }
+    static greeting() {
 
+    }
+}
+
+const john6 = new Person6("ali", 1999, 'doctor');
+Person6.greeting;
 
 
 
