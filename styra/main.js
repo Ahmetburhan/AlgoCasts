@@ -25,15 +25,11 @@ $(function(undefined) {
 });
 
 $(document).ready(function () {
-  $('#example').DataTable({
-    scrollY: '50vh',
-    scrollCollapse: true,
-    paging: false
-  });
+  $('#styraNodes').DataTable();
 });
 
 
-$("#seedCount").submit(function (e) {
+$("#seedCount").on('click', function (e) {
   // alert("Handler for .submit() called.");
 
   e.preventDefault();

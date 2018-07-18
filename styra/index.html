@@ -23,7 +23,7 @@
         <h1 class="display-4">Styra, team!</h1>
         <p class="lead container content"></p>
         <hr class="my-4">
-        <form class="lead">
+        <form class="lead form-inline">
             <div class="row">
                 <div class="col">
                     <input type="text" class="form-control" id="countInput" placeholder="Count">
@@ -32,6 +32,8 @@
                     <input type="text" id="seedInput" class="form-control" placeholder="Seed">
                 </div>
             </div>
+            <button id="seedCount" type="submit" class="btn btn-primary mb-2">Submit</button>
+
         </form>
         <p class="lead"></p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
@@ -124,11 +126,7 @@
     <script type="text/javascript" src="mersenne_twister.js"></script>
     <script type="text/javascript" src="generate_nodes.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#styraNodes').DataTable();
-        });
-    </script>
+    
 </body>
 
 </html>
