@@ -33,3 +33,6 @@ $(document).ready(function () {
 });
 
 
+console.log(countInput.value);
+console.log(seedInput.value);
+

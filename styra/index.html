@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.min.js"></script>
     <script type="text/javascript" src="mersenne_twister.js"></script>
@@ -29,8 +30,19 @@
     <h1 class="display-4">Styra, team!</h1>
     <p class="lead container"></p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
+<form class="lead">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control"
+             id="countInput" placeholder="Count">
+        </div>
+        <div class="col">
+            <input type="text"
+             id="seedInput" class="form-control" placeholder="Seed">
+        </div>
+    </div>
+</form>
+<p class="lead"></p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         <a href="" class="1"></a>
         <a href="" class="2"></a>
