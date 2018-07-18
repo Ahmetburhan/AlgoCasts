@@ -5,7 +5,6 @@ $(function(undefined) {
       // set and order on page refresh. That is:
       // var nodes = generateNodes(50000);
       nodes = generateNodes(50000, 1234567),
-
       content = '';
       totalEdges = _.reduce(nodes, function(count, value) {
           return count + _.size(value);
@@ -19,5 +18,18 @@ $(function(undefined) {
     'This averages to', averageEdgeCount, 'edges per node'
   ].join(' ');
 
+  
+
+
   $('.container').html(content);
 });
+
+$(document).ready(function () {
+  $('#example').DataTable({
+    scrollY: '50vh',
+    scrollCollapse: true,
+    paging: false
+  });
+});
+
+
