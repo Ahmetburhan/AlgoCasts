@@ -35,6 +35,26 @@ $("#seedCount").on('click', function (e) {
   e.preventDefault();
   console.log(countInput.value);
   console.log(seedInput.value);
+  let count = parseInt(countInput.value);
+  let seed = parseInt(seedInput.value);
+
+  let result = generateNodes(count, seed);
+  console.log(result);
+  for(let node in result){
+    let nodeName = node;
+    let eachNode = result[node];
+      console.log(nodeName, eachNode);
+      for (let el in eachNode) {
+        let key = el;
+        let value = eachNode[el];
+        console.log(key,value)
+      }
+    }
+  
+     
+  
+
+
 
 });
 
