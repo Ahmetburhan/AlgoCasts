@@ -21,7 +21,7 @@ $(function(undefined) {
   
 
 
-  $('.container').html(content);
+  $('.content').html(content);
 });
 
 $(document).ready(function () {
@@ -33,6 +33,13 @@ $(document).ready(function () {
 });
 
 
-console.log(countInput.value);
-console.log(seedInput.value);
+$("#seedCount").submit(function (e) {
+  // alert("Handler for .submit() called.");
+
+  e.preventDefault();
+  console.log(countInput.value);
+  console.log(seedInput.value);
+
+});
+
 
