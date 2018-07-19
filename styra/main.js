@@ -28,9 +28,13 @@ $(document).ready(function () {
   $('#styraNodes').DataTable();
 });
 
+// $(document).ready(function () {
+//   $("#styraNodes").addSortWidget();
+// });
+
 
 $("#seedCount").on('click', function (e) {
-  // alert("Handler for .submit() called.");
+
 
   e.preventDefault();
   console.log(countInput.value);
@@ -46,27 +50,24 @@ $("#seedCount").on('click', function (e) {
       console.log(nodeName, eachNode);
       // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
 
-      $('#td1').parent().append(`<tr>${eachNode}</tr>`);
+      $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 even"></tr>`);
 
       for (let el in eachNode) {
         let key = el;
         let value = eachNode[el];
         console.log(key,value)
        
-        // let table = document.getElementById("styraNodes");
-        // let row = table.insertRow(-1);
-
-        // let x = row.insertCell(-1);
-        // x.innerHTML = `${nodeName} => ${key} ${value}`;
+        
        
-        $('#td1').parent().append(`<td>${nodeName} => ${key} ${value}</td>`);
+       
+        $(`#${nodeName}`).append(`<td>${nodeName} => ${key} ${value}</td>`);
 
       }
+      
+
     }
   
      
-  
-
 
 
 });
