@@ -46,12 +46,19 @@ $("#seedCount").on('click', function (e) {
       console.log(nodeName, eachNode);
       // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
 
-      $('#td1').parent().append(`<tr>${nodeName}</tr>`);
+      $('#td1').parent().append(`<tr>${eachNode}</tr>`);
 
       for (let el in eachNode) {
         let key = el;
         let value = eachNode[el];
         console.log(key,value)
+       
+        // let table = document.getElementById("styraNodes");
+        // let row = table.insertRow(-1);
+
+        // let x = row.insertCell(-1);
+        // x.innerHTML = `${nodeName} => ${key} ${value}`;
+       
         $('#td1').parent().append(`<td>${nodeName} => ${key} ${value}</td>`);
 
       }
