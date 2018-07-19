@@ -24,9 +24,9 @@ $(function(undefined) {
   $('.content').html(content);
 });
 
-$(document).ready(function () {
-  $('#styraNodes').DataTable();
-});
+// $(document).ready(function () {
+//   $('#styraNodes').DataTable();
+// });
 
 $(document).ready(function () {
   $("#styraNodes").addSortWidget();
