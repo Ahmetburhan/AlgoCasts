@@ -44,10 +44,16 @@ $("#seedCount").on('click', function (e) {
     let nodeName = node;
     let eachNode = result[node];
       console.log(nodeName, eachNode);
+      // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
+
+      $('#td1').parent().append(`<tr>${nodeName}</tr>`);
+
       for (let el in eachNode) {
         let key = el;
         let value = eachNode[el];
         console.log(key,value)
+        $('#td1').parent().append(`<td>${nodeName} => ${key} ${value}</td>`);
+
       }
     }
   
