@@ -1,6 +1,6 @@
 $(function(undefined) {
-  var count = 50000,
-
+  var count = 50000;
+  
       // The second parameter is the seed, remove it to get a different
       // set and order on page refresh. That is:
       // var nodes = generateNodes(50000);
@@ -24,14 +24,13 @@ $(function(undefined) {
   $('.content').html(content);
 });
 
-$(document).ready(function () {
-  $('#styraNodes').DataTable();
-});
+// $(document).ready(function () {
+//   $('#styraNodes').DataTable();
+// });
 
-$(document).ready(function () {
-  $("#styraNodes").addSortWidget();
-});
-
+// $(document).ready(function () {
+//   $("#styraNodes").addSortWidget();
+// });
 
 $("#seedCount").on('click', function (e) {
 
@@ -43,29 +42,50 @@ $("#seedCount").on('click', function (e) {
   let seed = parseInt(seedInput.value);
 
   let result = generateNodes(count, seed);
-  console.log(result);
-  for(let node in result){
-    let nodeName = node;
-    let eachNode = result[node];
+    $(window).scroll(function () {
+      console.log("its moving now")
+    }) 
+  
+    $("#ascending").on('click', function (e) {
+      console.log("Ascending clicked")
+      result = Array.from(result).sort(function (a, b) { return a - b });
+      render(result);
+
+    });
+
+    $("#descending").on('click', function (e) {
+      console.log("Descending clicked")
+      let sortedResult = Array.from(result).sort(function (b, a) { return b - a });
+      result = sortedResult;
+      render(result);
+    });
+
+render(result);
+  function render(result) {
+    for (let node in result) {
+      let nodeName = node;
+      let eachNode = result[node];
       console.log(nodeName, eachNode);
       // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
 
-      $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 table-striped odd"></tr>`);
-     
+      $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 table-striped"> <th scope="row">${nodeName}</th></tr>`);
+
 
       for (let el in eachNode) {
         let key = el;
         let value = eachNode[el];
-        console.log(key,value)
-       
-        
-       
-        $(`#${nodeName}`).append(`<td>${nodeName} => ${key} ${value}</td>`);
+        console.log(key, value)
+
+
+
+        $(`#${nodeName}`).append(`<td>${nodeName} => ${key}: <b>${value}</b></td>`);
 
       }
-      
+
 
     }
+  }
+  
   
      
 

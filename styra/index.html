@@ -36,33 +36,32 @@
 </div>
         </form>
         <p class="lead"></p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        <a href="" class="1"></a>
-        <a href="" class="2"></a>
-        <a href="" class="3"></a>
+        <button class="btn btn-primary btn-lg"  id="ascending" role="button">Ascending Sort</button>
+        <button class="btn btn-primary btn-lg" id="descending" role="button">Descending Sort</button>
+       
 
         </p>
     </div>
     <h4>Nodes will be shown here!</h4>
 
-    <table id="styraNodes" class="display" style="width:100%">
+    <table id="styraNodes" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Node#</th>
-                <th>Child#1</th>
-                <th>Child#2</th>
-                <th>Child#3</th>
-                <th>Child#4</th>
-                <th>Child#5</th>
-                <th>Child#6</th>
-                <th>Child#7</th>
-                <th>Child#8</th>
-                <th>Child#9</th>
+                <th scope"col">Node#</th>
+                <th scope"col">Child#1</th>
+                <th scope"col">Child#2</th>
+                <th scope"col">Child#3</th>
+                <th scope"col">Child#4</th>
+                <th scope"col">Child#5</th>
+                <th scope"col">Child#6</th>
+                <th scope"col">Child#7</th>
+                <th scope"col">Child#8</th>
+                <th scope"col">Child#9</th>
 
             </tr>
         </thead>
         <tbody id="tbody">
-             <tr id="td1">
+             <!-- <tr id="td1">
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>
                 <td>Edinburgh</td>
@@ -74,7 +73,7 @@
                     <td>2011/04/25</td>
                     <td>$320,800</td>
                     
-            </tr>
+            </tr> -->
              <!-- 
                             
             <tr>
@@ -113,16 +112,16 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Node#</th>
-                <th>Child#1</th>
-                <th>Child#2</th>
-                <th>Child#3</th>
-                <th>Child#4</th>
-                <th>Child#5</th>
-                <th>Child#6</th>
-                <th>Child#7</th>
-                <th>Child#8</th>
-                <th>Child#9</th>
+            <th scope "col">Node#</th>
+            <th scope "col">Child#1</th>
+            <th scope "col">Child#2</th>
+            <th scope "col">Child#3</th>
+            <th scope "col">Child#4</th>
+            <th scope "col">Child#5</th>
+            <th scope "col">Child#6</th>
+            <th scope "col">Child#7</th>
+            <th scope "col">Child#8</th>
+            <th scope "col">Child#9</th>
 
             </tr>
         </tfoot>
@@ -143,6 +142,10 @@
     <script type="text/javascript" src="mersenne_twister.js"></script>
     <script type="text/javascript" src="generate_nodes.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <!-- <script>
+        $(window).scroll(function () {
+                console.log("its moving now")
+            }) </script> -->
     
 </body>
 

@@ -4,44 +4,47 @@
 
 class Chatroom {
  
-    constructor(author, recipient, messageText) {
-        this.author = author;
-        this.recipient = recipient;
-        this.messageText = messageText;
-        
+    constructor() {
+        this.messages = [];
+    
     }
 
     addMessage(author, recipient, messageText) {
         // Create a message with author, recipient, messageText and time
-        let result = [];
 
-        this.author = author;
-        this.recipient = recipient;
-        this.messageText = messageText;
-        let oneMessage = [this.author, this.recipient, this.messageText];
-        console.log(oneMessage)
-        result.push(oneMessage);
-        // console.log(typeof oneMessage)
-
-        return result;
+        // this.author = author;
+        // this.recipient = recipient;
+        // this.messageText = messageText;
+        // let oneMessage = {this.author, this.recipient, this.messageText};
+        // console.log(oneMessage)
+        // result.push(oneMessage);
+        // console.log(result)
+        this.messages.push({author,recipient,messageText})
        
      
     }
 
     getMessages() {
        
-       
-        return this;
+       console.log("getting messages array",this.messages)
+        return this.messages;
 
         // Return a list in reverse chronological order
     }
 
     getMessagesCountByRecipient(recipient) {
         // Return message count for recipient
-        if (this.recipient === recipient) {
-            return this.recipient;
-        }
-        return `${recipient} is not on Chatroom`;
+        // if (this.recipient === recipient) {
+        //     return this.recipient;
+        // }
+        let counter = 0;
+        this.messages.forEach(message => {
+            if(message.recipient === recipient) {
+                counter++;
+            }
+        })
+        console.log("counter",counter)
+        return counter;
     }
 }
 
@@ -62,11 +65,13 @@ console.log("recipient", messages.recipient);
 
 console.log("this is author", messages.author)
 
+
+
 console.log(chatroom.getMessagesCountByRecipient('Alice'))
 
-console.assert(chatroom.getMessagesCountByRecipient('Alice') === "Alice");
+// console.assert(chatroom.getMessagesCountByRecipient('Alice') === "Alice");
 
-// console.assert(messages.length === 3);
+console.assert(messages.length === 3);
 // console.assert(messages.author[0] === 'Bob');
 
-// console.assert(chatroom.getMessagesCountByRecipient('Alice') === 2);
+console.assert(chatroom.getMessagesCountByRecipient('Alice') === 2);
