@@ -60,7 +60,17 @@ $("#seedCount").on('click', function (e) {
       render(result);
     });
 
-render(result);
+render(result, dataTable);
+
+function dataTable(){
+  $(document).ready(function () {
+  $('#styraNodes').DataTable();
+  });
+  console.log("data table called")
+ 
+}
+
+
   function render(result) {
     for (let node in result) {
       let nodeName = node;
@@ -78,12 +88,15 @@ render(result);
 
 
 
-        $(`#${nodeName}`).append(`<td>${nodeName} => ${key}: <b>${value}</b></td>`);
+        $(`#${nodeName}`).append(`<td>${key}: <b>${value}</b></td>`);
+
+// $(`#${nodeName}`).append(`<td>${nodeName} => ${key}: <b>${value}</b></td>`);
 
       }
 
 
     }
+   
   }
   
   
