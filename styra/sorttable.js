@@ -1,10 +1,3 @@
-/*
- * sorttable.js
- *
- * Requires: jQuery (tested with v 1.11)
- *
- * jQuery plug-in that allows you to sort table by any column
-*/
 
 jQuery.fn.addSortWidget = function(options){
 	var defaults = {

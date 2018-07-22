@@ -43,34 +43,30 @@ $("#seedCount").on('click', function (e) {
   let seed = parseInt(seedInput.value);
 
   let result = generateNodes(count, seed);
-    $(window).scroll(function () {
-      console.log("its moving now")
-    }) 
+
+  console.log("here is the current count",count)
+
+  if (count > 200){
+
   
-    $("#ascending").on('click', function (e) {
-      
-      document.getElementById("ascending").onclick = function () {
-        $('#styraNodes').DataTable();
-        console.log("hithere")
+    $(window).scroll(function (count) {
+      console.log("its moving now")
+      let pager = 0;
+      while (pager <= count){
+      pager += 200;
+      count = pager;
+      return count;
       }
+      console.log("count incremented", count)
       
-      // console.log("Ascending clicked")
-      // result = Array.from(result).sort(function (a, b) { return a - b });
-      // render(result);
-      
+    }) 
 
-    });
 
-    $("#descending").on('click', function (e) {
-     
-      $(document).ready(function () {
-  $('#styraNodes').DataTable();
-});
-      console.log("Descending clicked")
-      // let sortedResult = Array.from(result).sort(function (b, a) { return b - a });
-      // result = sortedResult;
-      // render(result);
-    });
+  } else {
+    return count;
+  }
+  
+    
 
     
     $(document).ready(function () {
@@ -89,14 +85,11 @@ render(result);
 
   function render(result) {
  
-
-
-    
     for (let node in result) {
       let nodeName = node;
       let eachNode = result[node];
       console.log(nodeName, eachNode);
-      // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
+     
 
       $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 table-striped"> </tr>`);
        $(`#${nodeName}`).append(`<td scope="row">${nodeName}</td>`)
@@ -111,7 +104,6 @@ render(result);
 
         $(`#${nodeName}`).append(`<td>${key}: <b>${value}</b></td>`);
 
-// $(`#${nodeName}`).append(`<td>${nodeName} => ${key}: <b>${value}</b></td>`);
 
       }
 
@@ -122,7 +114,34 @@ render(result);
   
   
      
-  // $('#styraNodes').DataTable();
+
+
+});
+$("#connected").on('click', function (e) {
+
+  let wiki = "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
+  alert(`This can be solved by using Dijkstra's algorithm please refer to wiki here => ${wiki}`)
+
+
+
+
+
+});
+
+$("#min_weight").on('click', function (e) {
+
+  let wiki = "https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
+  alert(`This can be solved by using Dijkstra's algorithm please refer to wiki here => ${wiki}`)
+
+ 
+});
+
+$("#clearTable").on('click', function (e) {
+  var table = $('#styraNodes').DataTable();
+
+  table
+    .clear()
+    // .draw();
 
 
 });

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
 
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -65,8 +67,13 @@
 </div>
         </form>
         <p class="lead"></p>
-        <button class="btn btn-primary btn-lg"  id="ascending" role="button">Ascending Sort</button>
-        <button class="btn btn-primary btn-lg" id="descending" role="button">Descending Sort</button>
+        <button class="btn btn-primary btn-lg"  id="connected" role="button"><i class="fas fa-search"></i> Connected Nodes</button>
+        <button class="btn btn-primary btn-lg" id="min_weight" role="button"> <i class="fas fa-link"></i>
+Nodes w/min <i class="fas fa-weight-hanging"></i>
+</button>
+<button class="btn btn-primary btn-lg" id="clearTable" role="button">
+    Clear <i class="fas fa-table"></i>
+</button>
        
 
         </p>
@@ -93,7 +100,7 @@
             </tr>
         </thead>
         <tbody id="tbody">
-             <tr id="td1">
+             <!-- <tr id="td1">
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>
                 <td>Edinburgh</td>
@@ -105,7 +112,7 @@
                     <td>2011/04/25</td>
                     <td>$320,800</td>
                     
-            </tr>
+            </tr> -->
              <!-- 
                             
             <tr>

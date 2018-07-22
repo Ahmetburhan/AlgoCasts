@@ -57,3 +57,8 @@ body {
 p.lead.container.content {
   color: aliceblue;
 }
+
+.form-control {
+  float: right;
+  width: 45%;
+}
