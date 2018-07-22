@@ -46,25 +46,22 @@ $("#seedCount").on('click', function (e) {
 
   console.log("here is the current count",count)
 
-  if (count > 200){
+  if (count > 1){
+    let pager = 0;
+  
+    $(window).scroll(function () {
+      console.log("its moving now")
+      while(pager <= count){
+      pager += 1;
+      console.log("count here", count)
+      console.log("pager incremented", pager)
+      console.log(render(generateNodes(pager, seed)));
+        render(generateNodes(pager, seed));      }
+    })
+  }
+
 
   
-    $(window).scroll(function (count) {
-      console.log("its moving now")
-      let pager = 0;
-      while (pager <= count){
-      pager += 200;
-      count = pager;
-      return count;
-      }
-      console.log("count incremented", count)
-      
-    }) 
-
-
-  } else {
-    return count;
-  }
   
     
 
@@ -78,9 +75,11 @@ $("#seedCount").on('click', function (e) {
       });
     });
 
-render(result);
+// render(result);
 
+   
 
+  
 
 
   function render(result) {
@@ -137,12 +136,7 @@ $("#min_weight").on('click', function (e) {
 });
 
 $("#clearTable").on('click', function (e) {
-  var table = $('#styraNodes').DataTable();
-
-  table
-    .clear()
-    // .draw();
-
+  location.reload();
 
 });
 
