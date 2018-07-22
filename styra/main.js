@@ -28,9 +28,10 @@ $(function(undefined) {
 //   $('#styraNodes').DataTable();
 // });
 
-// $(document).ready(function () {
-//   $("#styraNodes").addSortWidget();
-// });
+$(document).ready(function () {
+  $('#styraNodes').addSortWidget();
+});
+
 
 $("#seedCount").on('click', function (e) {
 
@@ -47,38 +48,58 @@ $("#seedCount").on('click', function (e) {
     }) 
   
     $("#ascending").on('click', function (e) {
-      console.log("Ascending clicked")
-      result = Array.from(result).sort(function (a, b) { return a - b });
-      render(result);
+      
+      document.getElementById("ascending").onclick = function () {
+        $('#styraNodes').DataTable();
+        console.log("hithere")
+      }
+      
+      // console.log("Ascending clicked")
+      // result = Array.from(result).sort(function (a, b) { return a - b });
+      // render(result);
+      
 
     });
 
     $("#descending").on('click', function (e) {
+     
+      $(document).ready(function () {
+  $('#styraNodes').DataTable();
+});
       console.log("Descending clicked")
-      let sortedResult = Array.from(result).sort(function (b, a) { return b - a });
-      result = sortedResult;
-      render(result);
+      // let sortedResult = Array.from(result).sort(function (b, a) { return b - a });
+      // result = sortedResult;
+      // render(result);
     });
 
-render(result, dataTable);
+    
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#styraNodes tr").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
 
-function dataTable(){
-  $(document).ready(function () {
-  $('#styraNodes').DataTable();
-  });
-  console.log("data table called")
- 
-}
+render(result);
+
+
 
 
   function render(result) {
+ 
+
+
+    
     for (let node in result) {
       let nodeName = node;
       let eachNode = result[node];
       console.log(nodeName, eachNode);
       // document.getElementById('td1').innerHTML = `<td>${nodeName}</td>`;
 
-      $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 table-striped"> <th scope="row">${nodeName}</th></tr>`);
+      $('#tbody').append(`<tr role="row" id="${nodeName}" class="sorting_1 table-striped"> </tr>`);
+       $(`#${nodeName}`).append(`<td scope="row">${nodeName}</td>`)
 
 
       for (let el in eachNode) {
@@ -101,6 +122,7 @@ function dataTable(){
   
   
      
+  // $('#styraNodes').DataTable();
 
 
 });
