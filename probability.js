@@ -1,0 +1,1 @@
+//find the possible palindromes in string including one letters.
