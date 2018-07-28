@@ -9,7 +9,7 @@ function delay(array, sn) {
     for (let i = 0; i < array.length; i++) {
         setTimeout(() => {
             console.log(array[i]);
-        }, array[i] * 1000)
+        }, array[i] * sn)
 
     }
 }
@@ -27,4 +27,4 @@ function delay(array, sn) {
 // }
 
 
-delay(nums,1000)
+delay(nums,2000)
