@@ -5,26 +5,26 @@
 
 let nums = [1, 2, 3, 4, 6]
 
-function delay(array, sn) {
-    for (let i = 0; i < array.length; i++) {
-        setTimeout(() => {
-            console.log(array[i]);
-        }, array[i] * sn)
-
-    }
-}
-
-
-
-// for (let i = 1; i <= 10; i++) {
-//     (function (i) {
-
+// function delay(array, sn) {
+//     for (let i = 0; i < array.length; i++) {
 //         setTimeout(() => {
-//             console.log(i)
-//         }, i * 1000);
+//             console.log(array[i]);
+//         }, array[i] * sn)
 
-//     })(i);
+//     }
 // }
 
 
-delay(nums,2000)
+
+for (let i = 1; i <= 10; i++) {
+    (function (i) {
+
+        setTimeout(() => {
+            console.log(i)
+        }, i * 1000);
+
+    })(i);
+}
+
+
+// delay(nums,2000)
