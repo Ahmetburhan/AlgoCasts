@@ -6,4 +6,4 @@ var users = [
 
 let user = users.find((user) => user.name === "alex");
 
-user
+console.log(user)
