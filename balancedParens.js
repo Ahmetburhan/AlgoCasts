@@ -7,3 +7,5 @@ function balanceParens(array) {
 
     return result;
 }
+
+//right here
