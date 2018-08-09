@@ -1,11 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
+
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text style={styles.blue}> Weather 2.0</Text>
+        <Button
+          style={{ backgroundColor: 'blue'}}
+          large icon={{ name: 'envira', type: 'font-awesome' }}
+          title='Click me to go next' />
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
@@ -20,4 +26,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  blue: {
+    fontSize: 30,
+    color: "blue",
+    fontFamily: "Times New Roman"
+  },
+
+  
 });
