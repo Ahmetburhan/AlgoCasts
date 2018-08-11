@@ -1,9 +1,9 @@
 // Advanced Solution
 
 class Node {
-    constructor {
+    // constructor {
 
-    }
+    // }
 
 }
 function getIntersectionNode(headA, headB) {
