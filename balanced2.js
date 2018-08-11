@@ -1,4 +1,4 @@
-let parens = "((({}{{}})))"
+let parens = "((({})))"
 
 let parenFinder = function (str) {
     if (str.length == 0) {
@@ -13,14 +13,17 @@ let parenFinder = function (str) {
 
         }
 
-    } else if (curr == ")" && stack[stack.length - 1] == "(" || curr == "}" && stack[stack.length - 1] == "{" || curr == "]" && stack[stack.length - 1] == "[") {
+    else if (
+    curr == ")" && stack[stack.length - 1] == "(" || 
+    curr == "}" && stack[stack.length - 1] == "{" || 
+    curr == "]" && stack[stack.length - 1] == "[" ) {
         stack.pop()
         continue;
 
     } else {
         return false;
+    } 
     } return stack.length == 0
-
 }
 
   
@@ -29,4 +32,4 @@ let parenFinder = function (str) {
 
 
 
-parenFinder(parens);
+console.log(parenFinder(parens))
