@@ -1,20 +1,20 @@
-var twoSum = function (nums, target) {
-    var map = {};
-    for (var i = 0; i < nums.length; i++) {
-        var curr = nums[i];
-        if (map[target - curr] >= 0) {
-            map[target - curr]
-            console.log(map)
+let arr = [2, 7, 11, 15]
+let target = 9
 
-            return [map[target - curr], i]
 
+function twoSum(arr, target) {
+    let cache = {};
+    for (let i = 0; i < arr.length; i++) {
+        let curr = arr[i];
+        let second = target - curr;
+        cache[curr] = curr
+        // console.log(cache)
+        if (cache[second] !== undefined) {
+            return [cache[second], i]
         } else {
-            map[curr] = i;
-            console.log(map)
-
+            cache[curr] = i
         }
     }
 }
-let nums = [2,4,6,8]
 
-console.log(twoSum(nums, 10))
+console.log(twoSum(arr, target))
