@@ -20,11 +20,25 @@ let dogArray = ['d', 'o', 'g', ' ', 'a']
 let resolve = function (arr) {
 
     //let words = arr.join("")
+let result = []
+    arr = arr.join("").split(' ')
 
+   for(let i = arr.length-1; i >=0; i--){
+    result.push(arr[i])
+
+
+   }
+
+    return result.join(" ")
+}
+
+
+let resolve = function (arr) {
+
+   
     arr = arr.join("").split(' ').reverse().join(" ")
     return arr
 }
-
 console.log(resolve(sample))
 
 
