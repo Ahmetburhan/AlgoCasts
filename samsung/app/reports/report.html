@@ -130,12 +130,11 @@
         "path": "/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/reports"
     },
     "timer": {
-        "jasmineStart": "2018-08-25T01:17:29.133Z",
-        "jasmineDone": "2018-08-25T01:17:29.699Z"
+        "jasmineStart": "2018-08-25T21:08:10.331Z",
+        "jasmineDone": "2018-08-25T21:08:10.842Z"
     },
     "counts": {
-        "failed": 1,
-        "passed": 1
+        "failed": 2
     },
     "sequence": [
         {
@@ -145,12 +144,12 @@
             "failedExpectations": [
                 {
                     "matcherName": "",
-                    "message": "Failed: Not Implemented",
-                    "stack": "Error: Not Implemented\n    at Object.getActiveUsers (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/models/users.js:56:27)\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:49:15)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
+                    "message": "ReferenceError: user is not defined",
+                    "stack": "    at <Jasmine>\n    at Object.getActiveUsers (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/models/users.js:68:24)\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:49:15)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
                     "passed": false,
                     "expected": "",
                     "actual": "",
-                    "suspectLine": "    at Object.getActiveUsers (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/models/users.js:56:27)",
+                    "suspectLine": "    at <Jasmine>",
                     "hasSuspectLine": true
                 }
             ],
@@ -158,7 +157,7 @@
             "deprecationWarnings": [],
             "pendingReason": "",
             "status": "failed",
-            "stoped": "2018-08-25T01:17:29.634Z",
+            "stoped": "2018-08-25T21:08:10.827Z",
             "prefix": "Users Model with fixtures getActiveUsers ",
             "duration": null
         },
@@ -166,25 +165,23 @@
             "id": "spec0",
             "description": "returns all items",
             "fullName": "Users Model with fixtures getAll returns all items",
-            "failedExpectations": [],
-            "passedExpectations": [
+            "failedExpectations": [
                 {
-                    "matcherName": "toEqual",
-                    "message": "Passed.",
-                    "stack": "",
-                    "passed": true
-                },
-                {
-                    "matcherName": "toContain",
-                    "message": "Passed.",
-                    "stack": "",
-                    "passed": true
+                    "matcherName": "",
+                    "message": "TypeError: Cannot read property 'then' of undefined",
+                    "stack": "    at <Jasmine>\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:31:11)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
+                    "passed": false,
+                    "expected": "",
+                    "actual": "",
+                    "suspectLine": "    at <Jasmine>",
+                    "hasSuspectLine": true
                 }
             ],
+            "passedExpectations": [],
             "deprecationWarnings": [],
             "pendingReason": "",
-            "status": "passed",
-            "stoped": "2018-08-25T01:17:29.688Z",
+            "status": "failed",
+            "stoped": "2018-08-25T21:08:10.832Z",
             "prefix": "Users Model with fixtures getAll ",
             "duration": null
         }

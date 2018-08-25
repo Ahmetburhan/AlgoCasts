@@ -5,7 +5,7 @@ const fs = require('fs');
 const db = require('../utils/db');
 
 // // /* GET users listing. */
-// router.get('/', function (req, res, next) {
+// router.get('/', function(req, res, next) {
 //   console.log(users)
 //   users.getAll().then((result) => {
 //     console.log("result", result)
@@ -18,16 +18,17 @@ const db = require('../utils/db');
 //     // res.send("users", {users: users});
 
 //   })
-//     .catch((err) => {
-//       res.sendStatus(500);
-//       res.render('error', { message: "Cannot get users", error: err });
-//     });
+//   .catch((err) => {
+//     res.sendStatus(500);
+//     res.render('error', { message: "Cannot get users", error: err });
+//   });
 // });
 
 
 
 
-// /* GET home page. */
+
+/* GET home page. */
 router.get('/', function (req, res, next) {
   const users = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
   console.log("data here", users)
@@ -36,7 +37,7 @@ router.get('/', function (req, res, next) {
 
   //     return 
   // });
-  res.send("users", { users: users });
+  // res.send("users", { users: users });
   res.render('layout', { users: users });
 });
 

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
     <ul>
-        {{#each user}}
+        {{#each users}}
             <li>{{this.FirstName}} {{this.LastName}}</li>
             <li>{{this.Email}}</li>
             <li>{{this.Gender}}</li>
@@ -16,7 +8,5 @@
             <li>{{this.LastLoginDate}}</li>
         {{/each}}
     </ul>
-</body>
 
-</html>
 

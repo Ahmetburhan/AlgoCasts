@@ -49,12 +49,29 @@ const UsersModel = {
   },
 
   getAll() {
-    return User.find({});
-  },
+    return 
+  const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
+  console.log("data here", data)
+  const promises = users.map(element => {
+      console.log("elements here",element);
 
+      
+  })
+  return data;
+ 
+},
+
+  // getActiveUsers() {
+  //   return Promise.reject(new Error('Not Implemented'));
+  // },
   getActiveUsers() {
-    return Promise.reject(new Error('Not Implemented'));
-  },
-};
+    if(data){
+      if (data["IsActive"] === true)
+
+    }
+    return console.log(user);
+  }
+}
+
 
 module.exports = UsersModel;
