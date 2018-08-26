@@ -49,9 +49,9 @@ describe('Users Model', function () {
         users.getActiveUsers()
           .then((result) => {
             expect(result.length).toEqual(508);
-            expect(result).toContain(jasmine.objectContaining({ FullName: 'Lonnard Larmour' }));
-            expect(result).toContain(jasmine.objectContaining({ FullName: 'Zini' }));
-            expect(result).not.toContain(jasmine.objectContaining({ FullName: 'Adolf Devine' }));
+            expect(result).toContain(jasmine.objectContaining({ FirstName: 'Lonnard' }));
+            expect(result).toContain(jasmine.objectContaining({ LastName: 'Zini' }));
+            expect(result).not.toContain(jasmine.objectContaining({ FirstName: 'Adolf' }));
           })
           .then(done)
           .catch(done.fail);

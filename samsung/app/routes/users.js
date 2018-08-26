@@ -33,7 +33,7 @@ router.get('/', function (req, res, next) {
       Active: item.IsActive
     }));
     res.send({ Users: users });
-    res.render('layout', { result: users });
+    res.render('layout', { Users: users });
   })
     .catch((err) => {
       res.sendStatus(500);

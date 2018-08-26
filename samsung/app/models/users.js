@@ -32,50 +32,28 @@ const UsersModel = {
   insertMockData() {
     return User.count({}).then((count) => {
       if (count === 0) {
-        const data = JSON.parse(fs.readFileSync("../spec/fixtures/mockdata.json"));
+        const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
         const promises = data.map(element => UsersModel.insert(element));
         return Promise.all(promises)
           .then(() => {
             debug('All mock data inserted.');
-            return {message: 'Mock data inserted', count: promises.length};
+            return { message: 'Mock data inserted', count: promises.length };
           })
           .catch((error) => {
             debug(`Error adding mock data: ${error}`);
           });
       } else {
-        return {message: 'Mock data not inserted', count};
+        return { message: 'Mock data not inserted', count };
       }
     });
   },
 
   getAll() {
-     const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
-     const promises = data.map(element => UsersModel.insert(element));
-     return Promise.all(data)
-       .then(() => {
-         debug('All mock data inserted.');
-         return { message: 'Mock data inserted', count: data.length };
-       })
-       .catch((error) => {
-         debug(`Error adding mock data: ${error}`);
-       });
-
-      
+    return User.find({});
   },
 
-  // getActiveUsers() {
-  //   return Promise.reject(new Error('Not Implemented'));
-  // },
   getActiveUsers() {
-    const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
-    if(data){
-      if (data["IsActive"] === true){
-
-
-      }
-
-    }
-    return console.log(user);
+    return User.find({ IsActive: true });
   }
 }
 

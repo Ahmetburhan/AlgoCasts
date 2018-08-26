@@ -28,24 +28,24 @@ const db = require('../utils/db');
 
 
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  const users = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
-  console.log("data here", users)
-  // const promises = users.map(element => {
-  //     console.log("elements here",element);
+// /* GET home page. */
+// router.get('/', function (req, res, next) {
+//   const users = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
+//   console.log("data here", users)
+//   // const promises = users.map(element => {
+//   //     console.log("elements here",element);
 
-  //     return 
-  // });
-  // res.send("users", { users: users });
-  res.render('layout', { users: users });
-});
+//   //     return 
+//   // });
+//   res.send("users", { users: users });
+//   res.render('layout', { users: users });
+// });
 
 
     
 
 /* INSERT mocked user data */
-router.get('/setup-mock-data', function(req, res, next) {
+router.get('/', function(req, res, next) {
   users.insertMockData().then((result) => {
     res.render('status', { status: `${result.message}\nUsers in database: ${result.count}` });
   })
