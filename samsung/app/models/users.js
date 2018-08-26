@@ -49,24 +49,30 @@ const UsersModel = {
   },
 
   getAll() {
-    return 
-  const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
-  console.log("data here", data)
-  const promises = users.map(element => {
-      console.log("elements here",element);
+     const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
+     const promises = data.map(element => UsersModel.insert(element));
+     return Promise.all(data)
+       .then(() => {
+         debug('All mock data inserted.');
+         return { message: 'Mock data inserted', count: data.length };
+       })
+       .catch((error) => {
+         debug(`Error adding mock data: ${error}`);
+       });
 
       
-  })
-  return data;
- 
-},
+  },
 
   // getActiveUsers() {
   //   return Promise.reject(new Error('Not Implemented'));
   // },
   getActiveUsers() {
+    const data = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
     if(data){
-      if (data["IsActive"] === true)
+      if (data["IsActive"] === true){
+
+
+      }
 
     }
     return console.log(user);

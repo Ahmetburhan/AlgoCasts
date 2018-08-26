@@ -130,13 +130,58 @@
         "path": "/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/reports"
     },
     "timer": {
-        "jasmineStart": "2018-08-25T21:08:10.331Z",
-        "jasmineDone": "2018-08-25T21:08:10.842Z"
+        "jasmineStart": "2018-08-25T21:32:50.383Z",
+        "jasmineDone": "2018-08-25T21:32:51.282Z"
     },
     "counts": {
         "failed": 2
     },
     "sequence": [
+        {
+            "id": "spec0",
+            "description": "returns all items",
+            "fullName": "Users Model with fixtures getAll returns all items",
+            "failedExpectations": [
+                {
+                    "matcherName": "toEqual",
+                    "message": "Expected undefined to equal 1000.",
+                    "stack": "Error: Expected undefined to equal 1000.\n    at <Jasmine>\n    at users.getAll.then (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:32:35)\n    at <Jasmine>\n    at process._tickCallback (internal/process/next_tick.js:188:7)",
+                    "passed": false,
+                    "expected": 1000,
+                    "suspectLine": "    at <Jasmine>",
+                    "hasSuspectLine": true
+                },
+                {
+                    "matcherName": "toContain",
+                    "message": "Expected Object({ message: 'Mock data inserted', count: 1000 }) to contain <jasmine.objectContaining(Object({ FirstName: 'Lonnard', LastName: 'Larmour', Email: 'llarmourb@npr.org', Gender: 'Male', IsActive: true, LastLoginDate: Date(Mon Jan 29 2018 13:53:20 GMT-0800 (PST)) }))>.",
+                    "stack": "Error: Expected Object({ message: 'Mock data inserted', count: 1000 }) to contain <jasmine.objectContaining(Object({ FirstName: 'Lonnard', LastName: 'Larmour', Email: 'llarmourb@npr.org', Gender: 'Male', IsActive: true, LastLoginDate: Date(Mon Jan 29 2018 13:53:20 GMT-0800 (PST)) }))>.\n    at <Jasmine>\n    at users.getAll.then (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:33:28)\n    at <Jasmine>\n    at process._tickCallback (internal/process/next_tick.js:188:7)",
+                    "passed": false,
+                    "expected": {
+                        "sample": {
+                            "FirstName": "Lonnard",
+                            "LastName": "Larmour",
+                            "Email": "llarmourb@npr.org",
+                            "Gender": "Male",
+                            "IsActive": true,
+                            "LastLoginDate": "2018-01-29T21:53:20.000Z"
+                        }
+                    },
+                    "actual": {
+                        "message": "Mock data inserted",
+                        "count": 1000
+                    },
+                    "suspectLine": "    at <Jasmine>",
+                    "hasSuspectLine": true
+                }
+            ],
+            "passedExpectations": [],
+            "deprecationWarnings": [],
+            "pendingReason": "",
+            "status": "failed",
+            "stoped": "2018-08-25T21:32:51.185Z",
+            "prefix": "Users Model with fixtures getAll ",
+            "duration": null
+        },
         {
             "id": "spec1",
             "description": "returns only active users",
@@ -145,7 +190,7 @@
                 {
                     "matcherName": "",
                     "message": "ReferenceError: user is not defined",
-                    "stack": "    at <Jasmine>\n    at Object.getActiveUsers (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/models/users.js:68:24)\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:49:15)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
+                    "stack": "    at <Jasmine>\n    at Object.getActiveUsers (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/models/users.js:78:24)\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:49:15)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
                     "passed": false,
                     "expected": "",
                     "actual": "",
@@ -157,32 +202,8 @@
             "deprecationWarnings": [],
             "pendingReason": "",
             "status": "failed",
-            "stoped": "2018-08-25T21:08:10.827Z",
+            "stoped": "2018-08-25T21:32:51.262Z",
             "prefix": "Users Model with fixtures getActiveUsers ",
-            "duration": null
-        },
-        {
-            "id": "spec0",
-            "description": "returns all items",
-            "fullName": "Users Model with fixtures getAll returns all items",
-            "failedExpectations": [
-                {
-                    "matcherName": "",
-                    "message": "TypeError: Cannot read property 'then' of undefined",
-                    "stack": "    at <Jasmine>\n    at UserContext.<anonymous> (/Users/Apple/Desktop/Boot Camp/AlgoCasts/samsung/app/spec/models/users.spec.js:31:11)\n    at <Jasmine>\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)",
-                    "passed": false,
-                    "expected": "",
-                    "actual": "",
-                    "suspectLine": "    at <Jasmine>",
-                    "hasSuspectLine": true
-                }
-            ],
-            "passedExpectations": [],
-            "deprecationWarnings": [],
-            "pendingReason": "",
-            "status": "failed",
-            "stoped": "2018-08-25T21:08:10.832Z",
-            "prefix": "Users Model with fixtures getAll ",
             "duration": null
         }
     ]
