@@ -7,32 +7,18 @@ const db = require('../utils/db');
 
 
 
-
-// // /* GET home page. */
-// router.get('/', function (req, res, next) {
-//   const users = JSON.parse(fs.readFileSync("./spec/fixtures/mockdata.json"));
-//   console.log("data here", users)
-//   // const promises = users.map(element => {
-//   //     console.log("elements here",element);
-
-//   //     return 
-//   // });
-//   res.send("users", { users: users });
-//   res.render('layout', { users: users });
-// });
-
-
-
-
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   users.getAll().then((result) => {
     const users = result.map(item => ({
-      First: item.FirstName,
-      Last: item.LastName,
-      Active: item.IsActive
+      FirstName: item.FirstName,
+      LastName: item.LastName,
+      IsActive: item.IsActive,
+      Email: item.Email,
+      LastLoginDate: item.LastLoginDate,
+      Gender: item.Gender,
     }));
-    res.send({ Users: users });
+    // res.send({ Users: users }); //if you run this you got json
     res.render('layout', { Users: users });
   })
     .catch((err) => {
