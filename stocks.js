@@ -15,4 +15,5 @@ function buyStock(arr) {
 }
 
 
+
 console.log(buyStock(stocks))
