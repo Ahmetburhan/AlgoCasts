@@ -3,6 +3,7 @@ import './App.css';
 import RoomHeader from './components/RoomHeader'
 import MessageList from './components/MessageList'
 import RoomList from './components/RoomList'
+import request from 'superagent';
 
 const messages = [
   {
@@ -51,6 +52,30 @@ const roomList = [
 ]
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state ={
+      rooms : "",
+
+    }
+    
+  }
+  componentDidMount() {
+    request
+      .get(`http://localhost:8080/api/rooms`).then(res => {
+        if (res.ok) {
+          console.log(res.body)
+          console.log(res.body[0])
+          this.setState({
+            rooms: res.body,
+          })
+        } else {
+          console.log('We found nothing')
+        }
+      })
+    
+  }
+  
   render() {
     return (
       <div className="app">

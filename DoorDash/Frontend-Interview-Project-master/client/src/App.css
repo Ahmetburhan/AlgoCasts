@@ -63,7 +63,7 @@ p:hover {
   padding: 1.2rem;
 }
 
-.speech-bubble:after {
+/* .speech-bubble:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -77,7 +77,7 @@ p:hover {
   margin-left: -7.5px;
   margin-bottom: -15px;
   
-}
+} */
 .room{
   background-color: rgb(239, 241, 242);
 }
@@ -132,7 +132,7 @@ a#chatAuthor{
 
 /*  Small Devices, Phones */
 
-@media only screen and (max-width: 640px max-height: 1000px) {
+@media only screen and (max-width: 640px) {
 .room-list {
   display: none
 }
@@ -146,3 +146,23 @@ a#chatAuthor{
 
 }
 
+
+
+@media only screen and (max-height: 667px) {
+  .room-list {
+    display: none
+  }
+  .form-control {
+    width: 65%;
+  }
+  #chatbox {
+    width: 100%;
+  }
+  .msgContainer {
+    overflow: auto;
+    height: 400px;
+  }
+  .header {
+    padding-top: 0.1rem;
+  }
+}
