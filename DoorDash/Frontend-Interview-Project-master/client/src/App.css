@@ -116,6 +116,25 @@ a#chatAuthor{
   line-height: 60px;
   border-top: gray solid 2px;
 }
+#userNameBox{
+      width: 50%;
+      /* display: -ms-flexbox; */
+      /* display: flex; */
+      -ms-flex-pack: center;
+      justify-content: center;
+      /* align-items: center; */
+
+      align-items: center;
+      margin-top: 25%;
+      margin-left: 25%;
+}
+.btn-home{
+margin-top: 1.3rem;
+}
+#form-control{
+  width:100% !important;
+
+}
 #user{
   font-weight: 500;
   font-size: 1.8rem;

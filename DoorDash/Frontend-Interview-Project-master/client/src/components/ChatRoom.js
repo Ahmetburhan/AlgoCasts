@@ -4,7 +4,7 @@ import RoomHeader from './RoomHeader'
 import MessageList from './MessageList'
 import RoomList from './RoomList'
 import request from 'superagent';
-
+import Home from "./Home";
 
 
 
