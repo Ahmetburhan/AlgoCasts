@@ -4,6 +4,13 @@ import RoomHeader from './components/RoomHeader'
 import MessageList from './components/MessageList'
 import RoomList from './components/RoomList'
 import request from 'superagent';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import Error from './components/Error';
+import ChatRoom from './components/ChatRoom';
+
+
+
 
 const messages = [
   {
@@ -52,13 +59,13 @@ const roomList = [
 ]
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state ={
-      rooms : "",
+  constructor(props) {
+    super(props);
+  }
+  state = {
+    rooms: "",
+    messages: "",
 
-    }
-    
   }
   componentDidMount() {
     request
@@ -73,18 +80,45 @@ class App extends Component {
           console.log('We found nothing')
         }
       })
+    request
+      .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
+        if (res.ok) {
+          console.log(res.body)
+          console.log(res.body[0])
+          this.setState({
+            messages: res.body,
+          })
+        } else {
+          console.log('We found nothing')
+        }
+      })
     
   }
   
   render() {
+    // const messages = this.state.messages;
+    // const rooms = this.state.rooms;
+    // console.log(messages, rooms)
+   
+    // let sum = messages.map(el => el.name);
+
     return (
-      <div className="app">
-        <div className="room-list"> <RoomList rooms={roomList} messages={messages} /> </div>
-        <div className="room">
-          <RoomHeader names={messages.map(message => message.author)} />
-          <div className="message-list"> <MessageList messages={messages} /> </div>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Switch>
+         
+            <Route path="/" component={Home} exact />
+            <Route path="/chatroom" component={ChatRoom} exact />
+            <Route component={Error} />
+          
+        </Switch>
+      </BrowserRouter>
+      // <div className="app">
+      //   <div className="room-list"> <RoomList rooms={roomList} messages = {messages[0].author} /> </div>
+      //   <div className="room">
+      //     <RoomHeader names={messages.map(message => message.author)} />
+      //     <div className="message-list"> <MessageList messages={messages} /> </div>
+      //   </div>
+      // </div>
     );
   }
 }

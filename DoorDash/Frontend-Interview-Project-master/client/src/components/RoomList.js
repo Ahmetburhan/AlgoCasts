@@ -6,10 +6,10 @@ class RoomList extends React.Component {
     console.log(this.props)
     return (
     <div>
-        <div id="user">{this.props.messages[0].author}
+        <div id="user">{this.props &&  this.props.messages}
           <h6 class="timer">Logged in {moment().startOf('hour').fromNow()}</h6></div>
         <div>
-          {this.props.rooms.map(room => (
+          {this.props && this.props.rooms.map(room => (
             <div onClick={console.log(room)}> {room.name} </div>))}
         </div>
     </div>

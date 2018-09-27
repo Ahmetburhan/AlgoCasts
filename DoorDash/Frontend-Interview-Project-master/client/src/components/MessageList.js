@@ -29,7 +29,7 @@ class MessageList extends React.Component {
     request
       .post(`http://localhost:8080/api/rooms/${this.state.roomId}/messages`)
       .send({
-        name: "Name to be dynamic",
+        name: "Ahmet",
         message: this.state.inputText,
       })
       .then(res => {
@@ -55,7 +55,7 @@ class MessageList extends React.Component {
         <div className="msgContainer">
 
         {this.props.messages.map(message => (<div><p className="speech-bubble"> {message.message} </p>
-          <a id="chatAuthor">{message.author}</a></div>
+          <a id="chatAuthor">{message.name}</a></div>
          ))}
         <div> You typed {this.state.inputText} </div>
         </div>
