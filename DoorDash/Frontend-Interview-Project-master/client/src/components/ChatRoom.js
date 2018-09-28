@@ -57,39 +57,13 @@ const roomList = [
 class ChatRoom extends Component {
     constructor(props) {
         super(props);
+        
     }
+
     state = {
-        rooms: "",
         messages: "",
-
-    }
-    componentDidMount() {
-        request
-            .get(`http://localhost:8080/api/rooms`).then(res => {
-                if (res.ok) {
-                    console.log(res.body)
-                    console.log(res.body[0])
-                    this.setState({
-                        rooms: res.body,
-                    })
-                } else {
-                    console.log('We found nothing')
-                }
-            })
-        request
-            .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
-                if (res.ok) {
-                    console.log(res.body)
-                    console.log(res.body[0])
-                    this.setState({
-                        messages: res.body,
-                    })
-                } else {
-                    console.log('We found nothing')
-                }
-            })
-
-    }
+}
+    
 
     render() {
         // const messages = this.state.messages;
@@ -97,14 +71,21 @@ class ChatRoom extends Component {
         // console.log(messages, rooms)
 
         // let sum = messages.map(el => el.name);
+        console.log("Rooms here",this.state.rooms)
+        console.log("here props", this.props)
+        console.log("Username:", this.props.location.state.username)
+        let username = this.props.location.state.username;
+        let rooms = this.props.location.state.rooms;
+        let messages = this.props.location.state.messages;
+
 
         return (
             
             <div className="app">
-              <div className="room-list"> <RoomList rooms={roomList} messages = {messages[0].author} /> </div>
+                <div className="room-list"> <RoomList rooms={rooms} username={this.props.location.state.username} /> </div>
               <div className="room">
-                <RoomHeader names={messages.map(message => message.author)} />
-                <div className="message-list"> <MessageList messages={messages} /> </div>
+                <RoomHeader names={messages.map(message => message.name)} />
+                <div className="message-list"> <MessageList username={username} messages={messages} /> </div>
               </div>
             </div>
         );
