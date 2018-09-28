@@ -12,37 +12,7 @@ class MessageList extends React.Component {
       messages: "",
     };
   }
-  componentDidMount() {
-    // request
-    //   .get(`http://localhost:8080/api/rooms`).then(res => {
-    //     if (res.ok) {
-    //       console.log(res.body)
-    //       console.log(res.body[0])
-    //       this.setState({
-    //         rooms: res.body,
-    //       })
-    //     } else {
-    //       console.log('We found nothing')
-    //     }
-    //   })
-
-
-  }
-
-
-  handleChange(event) {
-    console.log("target value", event.target.value)
-    this.setState({ inputText: event.target.value });
-  }
-
-  handleClick = (e) => {
-    e.preventDefault();
-    // console.log("target value", e.target.value)
-
-    this.setState({
-      loading: true
-    })
-
+  componentDidMount(){
     request
       .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
         if (res.ok) {
@@ -55,6 +25,25 @@ class MessageList extends React.Component {
         }
       })
 
+
+  }
+ 
+
+
+  handleChange(event) {
+    console.log("target value", event.target.value)
+    this.setState({ inputText: event.target.value });
+    
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    // console.log("target value", e.target.value)
+
+    this.setState({
+      loading: true
+    })
+
     request
       .post(`http://localhost:8080/api/rooms/${this.state.roomId}/messages`)
       .send({
@@ -64,7 +53,6 @@ class MessageList extends React.Component {
       .then(res => {
         if (res.ok) {
           console.log(res.body)
-          console.log(res.body[0])
           this.setState({
             rooms: res.body,
           })
@@ -77,9 +65,22 @@ class MessageList extends React.Component {
           loading: false
         })
       })
+    request
+      .get(`http://localhost:8080/api/rooms/${this.state.roomId}/messages`).then(res => {
+        if (res.ok) {
+          console.log(res.body)
+          this.setState({
+            messages: res.body,
+          })
+        } else {
+          console.log('We found nothing')
+        }
+      })
+    
   }
 
   render() {
+    console.log("aaaaahaaatime",this.props)
     let messages = (this.state.messages === "") ?this.props.messages : this.state.messages;
     return (
       <div className="App-header">
