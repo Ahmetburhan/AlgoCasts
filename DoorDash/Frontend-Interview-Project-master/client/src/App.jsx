@@ -10,8 +10,6 @@ import Error from './components/Error';
 import ChatRoom from './components/ChatRoom';
 
 
-
-
 // const messages = [
 //   {
 //     message: 'hi',
@@ -61,12 +59,15 @@ import ChatRoom from './components/ChatRoom';
 class App extends Component {
   constructor(props) {
     super(props);
-  }
-  state = {
-    rooms: "",
-    messages: "",
+    this.state = {
+      rooms: "",
+      messages: "",
 
+    }
+   
   }
+ 
+  
   
   render() {
     // const messages = this.state.messages;
