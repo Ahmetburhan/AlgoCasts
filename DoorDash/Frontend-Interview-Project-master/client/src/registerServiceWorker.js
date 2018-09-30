@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -9,7 +11,6 @@
 // This link also includes instructions on opting out of this behavior.
 // src/registerServiceWorker.js
 
-/* eslint-disable no-console, no-param-reassign */
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost'
