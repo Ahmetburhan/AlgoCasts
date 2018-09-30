@@ -42,7 +42,7 @@ class RoomList extends React.Component {
           <h6 class="timer">Logged in {moment().startOf('hour').fromNow()}</h6></div>
         <div>
           {rooms.map(room => (
-            <div onClick={() => this.handleClick(room.id)}> {room.name} </div>))}
+            <div id="room" onClick={() => this.handleClick(room.id)}> <a>{room.name}</a> </div>))}
         </div>
     </div>
     )

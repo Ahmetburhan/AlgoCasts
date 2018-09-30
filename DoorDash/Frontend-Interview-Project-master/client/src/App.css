@@ -7,7 +7,7 @@
 }
 
 .room-list {
-  width: 40%;
+  width: 50%;
   height: -webkit-fill-available;
   display: flex;
   background-color: rgb(255, 25, 64);
@@ -33,7 +33,7 @@
   border-bottom: gray solid 2px;
 }
 
-#members a:hover {
+#members a:hover{
   color: rgb(255, 25, 64)
 }
 
@@ -41,6 +41,27 @@ p {
   padding-left: 20px;
   margin-left: 20px;
   font-weight: 400;
+}
+#room a:hover{
+  background-color: white;
+  color: rgb(255, 25, 64);
+  cursor: pointer;
+   position: relative;
+   border-radius: 2.4em;
+   width: 60%;
+   padding: 1.2rem;
+}
+#room a:focus {
+  background-color: rgb(97, 8, 24);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2.4em;
+  width: 60%;
+  padding: 1.2rem;
+}
+#room a:focus-within {
+  background: lightyellow;
 }
 
 p:hover {
