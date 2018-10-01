@@ -40,9 +40,13 @@ class ChatRoom extends Component {
                         rooms={rooms}
                         username={this.props.location.state.username} updateMessages={this.updateMessages} /> </div>
                 <div className="room">
-                    <RoomHeader names={messages.map(message => message.name)} username={this.props.location.state.username} />
-                    <div className="message-list"> <MessageList
-                        username={username} messages={messages} selectedRoomId={this.state.selectedRoomId} /> </div>
+                    <RoomHeader
+                        names={messages.map(message => message.name)} username={this.props.location.state.username} />
+                    <div className="message-list">
+                        <MessageList
+                            username={username}
+                            messages={messages}
+                            selectedRoomId={this.state.selectedRoomId} /> </div>
                 </div>
             </div>
         );
