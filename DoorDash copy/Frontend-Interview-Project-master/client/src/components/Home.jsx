@@ -9,38 +9,9 @@ class Home extends React.Component {
         this.state = {
             username: '',
             redirect: false,
-            rooms:'',
-            messages:"",
         };
     }
-    componentDidMount(props) {
-        request
-            .get(`http://localhost:8080/api/rooms`).then(res => {
-                if (res.ok) {
-                    console.log(res.body)
-                    this.setState({
-                        rooms: res.body,
-                    })
-                } else {
-                    console.log('We found nothing')
-                }
-            })
-        request
-            .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
-                if (res.ok) {
-                    console.log(res.body)
-                    console.log(res.body[0])
-                    this.setState({
-                        messages: res.body,
-                    })
-                } else {
-                    console.log('We found nothing')
-                }
-            })
-        
-
-    }
-
+   
   
 
     handleChange(event) {
@@ -71,9 +42,8 @@ class Home extends React.Component {
             return <Redirect to={{
                 pathname: '/chatroom',
                 state: {
-                username: this.state.username,
-                rooms: this.state.rooms,
-                messages: this.state.messages,
+                username: this.state.username
+                
             }
             } }/>
         }
