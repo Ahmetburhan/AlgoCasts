@@ -14,7 +14,7 @@ class MessageList extends React.Component {
   }
   componentDidMount(){
     request
-      .get(`http://localhost:8080/api/rooms/${this.props.selectedRoomId}/messages`).then(res => {
+      .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
         if (res.ok) {
           console.log(res.body)
           this.setState({
@@ -86,7 +86,7 @@ class MessageList extends React.Component {
       <div className="App-header">
         <div className="msgContainer">
 
-        {messages && messages.map(message => (<div><p className="speech-bubble"> {message.message} </p>
+        {messages.map(message => (<div><p className="speech-bubble"> {message.message} </p>
           <a id="chatAuthor">{message.name}</a></div>
          ))}
         <div> You typed {this.state.inputText} </div>
