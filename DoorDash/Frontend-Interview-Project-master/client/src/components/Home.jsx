@@ -18,7 +18,6 @@ class Home extends React.Component {
             .get(`http://localhost:8080/api/rooms`).then(res => {
                 if (res.ok) {
                     console.log(res.body)
-                    console.log(res.body[0])
                     this.setState({
                         rooms: res.body,
                     })

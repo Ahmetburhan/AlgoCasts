@@ -17,10 +17,8 @@ class MessageList extends React.Component {
 
   }
  
-
-
   handleChange(event) {
-    console.log("target value", event.target.value)
+    // console.log("target value", event.target.value)
     this.setState({ inputText: event.target.value });
     
   }
@@ -33,7 +31,7 @@ class MessageList extends React.Component {
     })
 
     request
-      .post(`http://localhost:8080/api/rooms/${this.state.roomId}/messages`)
+      .post(`http://localhost:8080/api/rooms/${this.props.selectedRoomId}/messages`)
       .send({
         name: this.props.username,
         message: this.state.inputText,
@@ -44,9 +42,6 @@ class MessageList extends React.Component {
           this.setState({
             rooms: res.body,
           })
-
-
-          
         } else {
           console.log('We found nothing')
         }
@@ -62,7 +57,7 @@ class MessageList extends React.Component {
   }
 
   render() {
-    console.log("aaaaahaaatime",this.props)
+    console.log("aaaaahaaatimeeee",this.props)
     let messages = this.props.messages;
 
     console.log(messages)

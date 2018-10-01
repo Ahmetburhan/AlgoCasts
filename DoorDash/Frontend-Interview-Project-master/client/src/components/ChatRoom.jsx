@@ -14,9 +14,11 @@ class ChatRoom extends Component {
     }
     state = {
         messages: "",
+        selectedRoomId: 0,
 }
     
     updateMessages(selectedRoomId, messages) {
+        console.log("update message room",selectedRoomId)
         this.setState({messages, selectedRoomId})
     }
 

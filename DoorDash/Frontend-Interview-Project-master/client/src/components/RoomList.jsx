@@ -6,7 +6,7 @@ import request from 'superagent';
 class RoomList extends React.Component {
   constructor() {
     super();
-    
+
     this.state = {
       inputText: '',
       roomId: 0,
@@ -16,11 +16,11 @@ class RoomList extends React.Component {
   }
 
   handleChangeRoom = (room) => {
-    this.setState({selectedRoomId: room}, () => {
+    this.setState({ selectedRoomId: room }, () => {
       request
         .get(`http://localhost:8080/api/rooms/${room}/messages`).then(res => {
           if (res.ok) {
-            console.log(res.body)
+            console.log("handleChangeRoom",res.body,room)
             this.props.updateMessages(room, res.body)
           } else {
             console.log('We found nothing')
@@ -30,8 +30,8 @@ class RoomList extends React.Component {
   }
 
   render() {
-    console.log("props here",this.props)
-    console.log("messages",this.state.messages)
+    console.log("props here", this.props)
+    console.log("messages", this.state.messages)
     const user = this.props.username;
     console.log("aaaaaa", user)
     console.log("bbbbbb", this.state.selectedRoomId)
@@ -39,19 +39,19 @@ class RoomList extends React.Component {
     let userName = user[0].toUpperCase() + user.slice(1, user.length);
     let rooms = this.props.rooms;
     return (
-    <div>
+      <div>
         <div id="user">{userName}
           <h6 class="timer">Logged in {moment().startOf('hour').fromNow()}</h6></div>
         <div>
           {rooms.map(room => (
-            <div 
-              id="room" 
+            <div
+              id="room"
               className={this.state.selectedRoomId === room.id ? 'active-room' : ''}
-              onClick={() => this.handleChangeRoom(room.id)}> 
-                <a>{room.name}</a> 
+              onClick={() => this.handleChangeRoom(room.id)}>
+              <a>{room.name}</a>
             </div>))}
         </div>
-    </div>
+      </div>
     )
   }
 }
