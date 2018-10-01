@@ -82,6 +82,8 @@ class MessageList extends React.Component {
   render() {
     console.log("aaaaahaaatime",this.props)
     let messages = (this.state.messages === "") ?this.props.messages : this.state.messages;
+
+    console.log(messages)
     return (
       <div className="App-header">
         <div className="msgContainer">
