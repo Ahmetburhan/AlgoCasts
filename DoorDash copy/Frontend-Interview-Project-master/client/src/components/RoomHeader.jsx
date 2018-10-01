@@ -1,12 +1,11 @@
 import React from 'react';
 
-const RoomHeader = ({ names,username }) => {
-  // console.log("roomheader", this.props);
+const RoomHeader = (props) => {
   return (
     <div className="header">
       <h2>DoorDash ChatRoom</h2>
       <div id="members">
-        {names.map(name => (
+        {props.names.map(name => (
           <a>
             {' '}
             {name}
