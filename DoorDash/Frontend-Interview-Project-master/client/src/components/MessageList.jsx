@@ -14,7 +14,6 @@ class MessageList extends React.Component {
   }
   componentDidMount(){
    
-
   }
  
   handleChange(event) {
@@ -26,10 +25,6 @@ class MessageList extends React.Component {
   handleClick = (e) => {
     e.preventDefault();
 
-    this.setState({
-      loading: true
-    })
-
     request
       .post(`http://localhost:8080/api/rooms/${this.props.selectedRoomId}/messages`)
       .send({
@@ -38,10 +33,24 @@ class MessageList extends React.Component {
       })
       .then(res => {
         if (res.ok) {
-          console.log(res.body)
+          // console.log(res.body)
           this.setState({
             rooms: res.body,
           })
+          request
+            .get(`http://localhost:8080/api/rooms/${this.props.selectedRoomId}/messages`).then(res => {
+              if (res.ok) {
+                console.log("messages updates",res.body)
+                console.log(res.body[0])
+                this.setState({
+                  messages: res.body,
+                })
+              } else {
+                console.log('We found nothing')
+              }
+            })
+         
+  
         } else {
           console.log('We found nothing')
         }
@@ -57,10 +66,10 @@ class MessageList extends React.Component {
   }
 
   render() {
-    console.log("aaaaahaaatimeeee",this.props)
-    let messages = this.props.messages;
+    // console.log("aaaaahaaatimeeee",this.props)
+    let messages = this.state.messages || this.props.messages ;
 
-    console.log(messages)
+    console.log("here is messages", messages)
     return (
       <div className="App-header">
         <div className="msgContainer">

@@ -9,9 +9,6 @@ import Home from './components/Home';
 import Error from './components/Error';
 import ChatRoom from './components/ChatRoom';
 
-
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,11 +26,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-
           <Route path="/" component={Home} exact />
           <Route path="/chatroom" render={props => <ChatRoom rooms={this.state && this.state.rooms} {...props} />} exact />
           <Route component={Error} />
-
         </Switch>
       </BrowserRouter>
     );
