@@ -24,24 +24,7 @@ class App extends Component {
 
 
   render() {
-    // const messages = this.state.messages;
-    // request
-    //   .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
-    //     if (res.ok) {
-    //       console.log(res.body)
-    //       console.log(res.body[0])
-    //       this.setState({
-    //         messages: res.body,
-    //       })
-    //     } else {
-    //       console.log('We found nothing')
-    //     }
-    //   })
 
-
-    // console.log(messages, rooms)
-
-    // let sum = messages.map(el => el.name);
 
     return (
       <BrowserRouter>

@@ -15,7 +15,7 @@ class RoomList extends React.Component {
     };
   }
 
-  handleClick = (room) => {
+  handleChangeRoom = (room) => {
     this.setState({selectedRoomId: room}, () => {
       request
         .get(`http://localhost:8080/api/rooms/${room}/messages`).then(res => {
@@ -47,7 +47,7 @@ class RoomList extends React.Component {
             <div 
               id="room" 
               className={this.state.selectedRoomId === room.id ? 'active-room' : ''}
-              onClick={() => this.handleClick(room.id)}> 
+              onClick={() => this.handleChangeRoom(room.id)}> 
                 <a>{room.name}</a> 
             </div>))}
         </div>

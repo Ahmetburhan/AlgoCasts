@@ -13,18 +13,7 @@ class MessageList extends React.Component {
     };
   }
   componentDidMount(){
-    request
-      .get(`http://localhost:8080/api/rooms/0/messages`).then(res => {
-        if (res.ok) {
-          console.log(res.body)
-          this.setState({
-            messages: res.body,
-          })
-        } else {
-          console.log('We found nothing')
-        }
-      })
-
+   
 
   }
  
@@ -38,7 +27,6 @@ class MessageList extends React.Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    // console.log("target value", e.target.value)
 
     this.setState({
       loading: true
@@ -56,6 +44,9 @@ class MessageList extends React.Component {
           this.setState({
             rooms: res.body,
           })
+
+
+          
         } else {
           console.log('We found nothing')
         }
@@ -65,23 +56,14 @@ class MessageList extends React.Component {
           loading: false
         })
       })
-    request
-      .get(`http://localhost:8080/api/rooms/${this.state.roomId}/messages`).then(res => {
-        if (res.ok) {
-          console.log(res.body)
-          this.setState({
-            messages: res.body,
-          })
-        } else {
-          console.log('We found nothing')
-        }
-      })
+    
+      
     
   }
 
   render() {
     console.log("aaaaahaaatime",this.props)
-    let messages = (this.state.messages === "") ?this.props.messages : this.state.messages;
+    let messages = this.props.messages;
 
     console.log(messages)
     return (
