@@ -55,7 +55,7 @@ class Home extends React.Component {
         e.preventDefault();
         console.log("Handler target value", this.state.username)
     
-        if (this.state.username == ""){
+        if (this.state.username === ""){
             alert("Please enter Username to enter Chatroom!")
         }else{
             this.setState({
@@ -66,7 +66,7 @@ class Home extends React.Component {
     }
     }
     renderRedirect = () => {
-        if (this.state.redirect && this.state.username != "") {
+        if (this.state.redirect && this.state.username !== "") {
             console.log("Handler target value", this.state.redirect)
 
             return <Redirect to={{

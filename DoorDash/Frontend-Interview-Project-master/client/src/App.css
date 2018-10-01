@@ -7,7 +7,7 @@
 }
 
 .room-list {
-  width: 50%;
+  width: 22%;
   height: -webkit-fill-available;
   display: flex;
   background-color: rgb(255, 25, 64);
@@ -42,15 +42,16 @@ p {
   margin-left: 20px;
   font-weight: 400;
 }
-#room a:hover{
+#room a:hover, #room.active-room a {
   background-color: white;
   color: rgb(255, 25, 64);
   cursor: pointer;
    position: relative;
    border-radius: 2.4em;
    width: 60%;
-   padding: 1.2rem;
+   padding: 0.6rem;
 }
+
 #room a:focus {
   background-color: rgb(97, 8, 24);
   color: white;

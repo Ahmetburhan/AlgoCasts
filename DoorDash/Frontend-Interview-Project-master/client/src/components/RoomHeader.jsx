@@ -1,7 +1,7 @@
 import React from 'react';
 
-const RoomHeader = ({ names }) => {
-  console.log(this.props);
+const RoomHeader = ({ names,username }) => {
+  console.log("roomheader", this.props);
   return (
     <div className="header">
       <h2>DoorDash ChatRoom</h2>
@@ -12,7 +12,7 @@ const RoomHeader = ({ names }) => {
             {name}
             {' '}
           </a>
-        ))}
+        ))} 
       </div>
     </div>
   );

@@ -10,58 +10,14 @@ import Error from './components/Error';
 import ChatRoom from './components/ChatRoom';
 
 
-// const messages = [
-//   {
-//     message: 'hi',
-//     author: 'Ahmet Koylan'
-//   },
-//   {
-//     message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries',
-//     author: 'Lorem'
-//   },
-//   {
-//     message: 'heyy Babe',
-//     author: 'Shehriban'
-//   },
-//   {
-//     message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries',
-//     author: 'ipsum'
-//   },
-//   {
-//     message: 'heyy Babe',
-//     author: 'Sheila'
-//   },
-//   {
-//     message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries',
-//     author: 'Croissant'
-//   },
-//   {
-//     message: 'heyy Babe',
-//     author: 'John'
-//   },
-//   {
-//     message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries',
-//     author: 'Kevin'
-//   },
-// ]
 
-// const roomList = [
-//   {
-//     id: 1,
-//     name: 'Business Room',
-//   },
-//   {
-//     id: 2,
-//     name: 'Fun Room',
-//   }
-// ]
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       rooms: '',
-      messages: '',
+      messages: ''
 
     };
   }
