@@ -1,7 +1,6 @@
 import React from "react";
 import { Redirect } from 'react-router-dom';
-import request from 'superagent';
-
+//username splash page
 class Home extends React.Component {
     constructor() {
         super();
@@ -11,30 +10,28 @@ class Home extends React.Component {
             redirect: false,
         };
     }
-   
-  
 
     handleChange(event) {
-        console.log("target value", event.target.value)
         this.setState({ username: event.target.value });
-        console.log("Username", this.state.username)
-        
+        // console.log("Username", this.state.username)
+
     }
 
     handleClick = (e) => {
         e.preventDefault();
-        console.log("Handler target value", this.state.username)
-    
-        if (this.state.username === ""){
+        // console.log("Handler target value", this.state.username)
+        if (this.state.username === "") {
             alert("Please enter Username to enter Chatroom!")
-        }else{
+        } else {
             this.setState({
                 redirect: true
             })
-            
-      
+
+
+        }
     }
-    }
+
+    //Page redirection handled here
     renderRedirect = () => {
         if (this.state.redirect && this.state.username !== "") {
             console.log("Handler target value", this.state.redirect)
@@ -42,24 +39,24 @@ class Home extends React.Component {
             return <Redirect to={{
                 pathname: '/chatroom',
                 state: {
-                username: this.state.username
-                
-            }
-            } }/>
+                    username: this.state.username
+
+                }
+            }} />
         }
     }
 
 
-    render(){
-    return (
-        <div>
-            {this.renderRedirect()}
-            <div id="userNameBox">
-                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="form-control" placeholder="Type your username..." value={this.state.inputText} />
-                <button type="button" class="btn btn-danger btn-lg btn-block btn-home" onClick={this.handleClick} > Join the DoorDash Chat! </button>
+    render() {
+        return (
+            <div>
+                {this.renderRedirect()}
+                <div id="userNameBox">
+                    <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="form-control" placeholder="Type your username..." value={this.state.inputText} />
+                    <button type="button" class="btn btn-danger btn-lg btn-block btn-home" onClick={this.handleClick} > Join the DoorDash Chat! </button>
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 }
 export default Home;

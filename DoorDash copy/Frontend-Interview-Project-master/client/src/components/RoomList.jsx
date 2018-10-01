@@ -1,17 +1,16 @@
 import React from 'react';
 import moment from 'moment';
-import request from 'superagent';
 
-
+//Roomlist panel with user and chatrooms
 const RoomList =(props)=> {
-  console.log("roomlist",props)
     return (
       <div>
         <div id="user">{props.username}
-          <h6 class="timer">Logged in {moment().startOf('hour').fromNow()}</h6></div>
+          <h6 className="timer">Logged in {moment().startOf('hour').fromNow()}</h6></div>
         <div>
           {props.rooms.map(room => (
             <div
+              key={room.id}
               id="room"
               className={props.selectedRoomId === room.id ? 'active-room' : ''}
               onClick={() => props.handleChangeRoom(room.id)}>

@@ -5,8 +5,6 @@ import MessageList from './MessageList'
 import RoomList from './RoomList'
 import request from 'superagent';
 
-
-
 class ChatRoom extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +26,7 @@ class ChatRoom extends Component {
             request
                 .get(`http://localhost:8080/api/rooms/${room}/messages`).then(res => {
                     if (res.ok) {
-                        console.log("handleChangeRoom", res.body, room)
+                        // console.log("handleChangeRoom", res.body, room)
                         this.handleGetMessages(this.state.selectedRoomId);
                     } else {
                         console.log('We found nothing')
@@ -42,7 +40,7 @@ class ChatRoom extends Component {
         request
             .get(`http://localhost:8080/api/rooms`).then(res => {
                 if (res.ok) {
-                    console.log(res.body)
+                    // console.log(res.body)
                     this.setState({
                         rooms: res.body,
                     })
@@ -55,8 +53,7 @@ class ChatRoom extends Component {
         request
             .get(`http://localhost:8080/api/rooms/${roomId}/messages`).then(res => {
                 if (res.ok) {
-                    console.log(res.body)
-                    console.log(res.body[0])
+                    // console.log(res.body)
                     this.setState({
                         messages: res.body,
                     })
@@ -74,8 +71,7 @@ class ChatRoom extends Component {
     }
     handlePost = (e) => {
         e.preventDefault();
-        console.log("handlepost here",e)
-        console.log("value here", e.target.children[0].value)
+        // console.log("value here", e.target.children[0].value)
 
 
         request

@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Message submission to parent handle by => handlepost 
 const MessageForm = (props) => {
     return (
         <div id="chatbox">
