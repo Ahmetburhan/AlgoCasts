@@ -11,7 +11,7 @@ Here is the link to watch how app works
 
 #Chatpanel
 
-![Alt text](./spec/ChatDash?raw=true "Chatpanel")
+![Alt text](./spec/ChatDash.png?raw=true "Chatpanel")
 Youtube:
 https://youtu.be/bXWWG13V9hY
 
