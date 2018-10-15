@@ -13,9 +13,9 @@ let getElementsByClassName = function (className) {
         // console.log(node.tree.childNodes.length);
         for (var i = 0; i < node.tree.childNodes.length; i++) {
             // console.log(node.tree.childNodes[i])
-            if (node.tree.childNodes[i].childNodes.length > 0) {
-                traverse(node.tree.childNodes[i]);
-            }
+            // if (node.tree.childNodes[i].childNodes.length > 0) {
+            //     traverse(node.tree.childNodes[i]);
+            // }
           
             if (node.tree.childNodes[i].attributes) {
                 matches.push(node.tree.childNodes[i].attributes.id);
